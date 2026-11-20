@@ -2,13 +2,6 @@
 
 GitHub 仓库：[VIIWQX/3dv_group6](https://github.com/VIIWQX/3dv_group6)
 
-| 姓名 | 学号 | 分工与贡献 | 工作量 |
-| --- | --- | --- | --- |
-| 李昱晔 | 260010184 | 数据筛选、清洗证据与来源整理；相机、木桶复核 | 20% |
-| 李宇怀 | 260010242 | 多视角图像、相机坐标与数据划分；岩石、电话复核 | 20% |
-| 仵庆熹 | 260010041 | SIFT匹配、几何核验与稀疏点云；长靴、收音机复核 | 20% |
-| 曾子荣 | 260010171 | NeRF训练、检查点与GIF；石狮、木推车复核 | 20% |
-| 刘景寒 | 260010193 | 消融评价、报告与交付整合；箱子、卡车复核 | 20% |
 
 输入来自第一次作业 **000-000** 分片的清洗合格模型。流程：只读 GLB → 合成多视角 RGBA → SIFT 点匹配与几何核验 → 相机/稀疏重建诊断 → 体素特征 NeRF 训练 → 独立测试评价 → 60 帧环绕 GIF。
 
@@ -18,7 +11,6 @@ GitHub 仓库：[VIIWQX/3dv_group6](https://github.com/VIIWQX/3dv_group6)
 
 - [展示页](index.html)：直接用浏览器打开，查看10对象GIF、指标和逐对象结果。
 - [完整流水线报告](docs/pipeline_report.md)，同时提供 [HTML](docs/pipeline_report.html) 和 [DOCX](docs/pipeline_report.docx)。
-- [小组成员与分工](configs/team.json)：第6组，五名成员各承担20%的模块工作。
 - [全部任务级提示词](docs/PROMPTS.md)、[数据来源和署名](docs/DATA_LICENSES.md)。
 - [全体对象索引](manifests/selection.json)、[交付核验](manifests/validation.json)。
 
