@@ -1,0 +1,14 @@
+# Python 3.10. Tested GPU: H100 MIG 3g.40gb; PyTorch CUDA 12.1 wheel.
+torch==2.1.2
+numpy==1.26.4
+Pillow==11.0.0
+opencv-python-headless==4.10.0.84
+trimesh==4.5.3
+numba==0.60.0
+imageio==2.37.0
+scipy==1.14.1
+scikit-image==0.24.0
+matplotlib==3.10.0
+python-docx==1.2.0
+Markdown==3.7
+pycolmap==3.13.0

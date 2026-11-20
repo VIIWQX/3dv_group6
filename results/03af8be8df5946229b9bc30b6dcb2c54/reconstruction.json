@@ -1,0 +1,20 @@
+{
+  "checkpoint": "/data/260010041/class_homework/3dv/assignment2/results/03af8be8df5946229b9bc30b6dcb2c54/checkpoint.pt",
+  "output": "/data/260010041/class_homework/3dv/assignment2/results/03af8be8df5946229b9bc30b6dcb2c54/reconstruction.ply",
+  "vertices": 12401,
+  "faces": 24834,
+  "resolution": 96,
+  "bound": 1.0,
+  "voxel_size": 0.021052631578947368,
+  "requested_density_threshold": 10.599318687424962,
+  "density_threshold": 10.599318687424962,
+  "equivalent_alpha_per_voxel": 0.19999999999999996,
+  "adaptive_threshold_used": false,
+  "density_min": 3.581747953784742e-10,
+  "density_max": 35.0,
+  "removed_small_component_voxels": 34,
+  "components_before_filter": 22,
+  "colors": "sigmoid of learned spatial RGB feature logits; view-dependent decoder omitted",
+  "source_geometry_used": false,
+  "interpretation": "Threshold-dependent isosurface diagnostic of the learned volume, not a ground-truth geometry evaluation"
+}

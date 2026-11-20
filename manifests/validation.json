@@ -1,0 +1,1355 @@
+{
+  "schema_version": "assignment2-validation-v1",
+  "checked_at_utc": "2026-11-20T08:00:07.875797+00:00",
+  "complete": true,
+  "status": "passed",
+  "allow_pending_requested": false,
+  "source_root": "/data/260010041/class_homework/3dv",
+  "evidence_source": "assignment1_original_files",
+  "required_objects": 10,
+  "complete_objects": 10,
+  "complete_object_uids": [
+    "03b0ac7d99c44197a09640179f360f3c",
+    "624f8d104cee405092161fc7447c78f1",
+    "3189bb396f8b4847afd3cb821dc4b919",
+    "03af8be8df5946229b9bc30b6dcb2c54",
+    "01e35903910841fdb2f3c4dc41ff8b74",
+    "04c6b0d6e35446d2a42d4033f4e286c9",
+    "c37d22acc31a41c5aa353f28a8494c1d",
+    "034e31bc4b8a471699c3056b671b97b3",
+    "0451dc8905f140639e0d081e78ea6b86",
+    "0563c6e7a4ac4f02b6914f4f6e32b7fa"
+  ],
+  "failed_checks": 0,
+  "pending_required_checks": 0,
+  "identity_placeholders_allowed": true,
+  "scope_note": "CPU artifact and data-independence validation; optional SfM outcomes are reported, and the later delivery ZIP is outside this check.",
+  "checks": [
+    {
+      "scope": "submission",
+      "check": "selection",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "objects": 10,
+        "distinct_uids": 10,
+        "shards": [
+          "000-000"
+        ]
+      }
+    },
+    {
+      "scope": "submission",
+      "check": "reconstruction_source_code",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "checked_modules": [
+          {
+            "file": "src/nerf.py",
+            "sha256": "d694be3befef60264063d1f7d9aba459fd174c24c2dde12b1efd4a7d35c0329a",
+            "imports": [
+              "__future__",
+              "argparse",
+              "csv",
+              "json",
+              "math",
+              "random",
+              "time",
+              "pathlib",
+              "typing",
+              "numpy",
+              "PIL",
+              "torch",
+              "torch",
+              "torch.nn",
+              "skimage.metrics"
+            ]
+          },
+          {
+            "file": "src/export_geometry.py",
+            "sha256": "3b08870c73f737ae8afdffe532857a006c318705135e48c5dd27072e8032cd69",
+            "imports": [
+              "__future__",
+              "argparse",
+              "json",
+              "math",
+              "pathlib",
+              "numpy",
+              "torch",
+              "torch.nn",
+              "nerf",
+              "skimage.measure",
+              "scipy.ndimage"
+            ]
+          },
+          {
+            "file": "src/match_features.py",
+            "sha256": "e00f35e4156ccce2f954fa54868c8f1ac5528e88238b205489522d7085ae1410",
+            "imports": [
+              "__future__",
+              "argparse",
+              "csv",
+              "json",
+              "math",
+              "time",
+              "pathlib",
+              "cv2",
+              "numpy",
+              "PIL"
+            ]
+          },
+          {
+            "file": "src/run_sfm.py",
+            "sha256": "1c4ca34662260edeac2afbb2a4d5f36934c60b6fa73880d1d038303a5c119d57",
+            "imports": [
+              "__future__",
+              "argparse",
+              "hashlib",
+              "json",
+              "math",
+              "pathlib",
+              "sys",
+              "time",
+              "traceback",
+              "numpy",
+              "PIL",
+              "pycolmap"
+            ]
+          }
+        ],
+        "source_geometry_imports_in_reconstruction": false,
+        "training_function_loads_train_only": true,
+        "limitation": "Static import/call audit supplements artifact checks; it is not a general proof about arbitrary Python execution."
+      }
+    },
+    {
+      "scope": "submission",
+      "check": "cleaning_audits_available",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "evidence_source": "assignment1_original_files",
+        "archived_subset": false,
+        "paths": {
+          "strict_index": "/data/260010041/class_homework/3dv/cleaned/object-paths_000-000.json",
+          "old_audit": "/data/260010041/class_homework/3dv/manifests/cleaning_000-000.jsonl",
+          "v2_audit": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/manifests/cleaning_000-000.jsonl"
+        },
+        "selected_original_audit_records": 10,
+        "selected_v2_audit_records": 10
+      }
+    },
+    {
+      "scope": "camera",
+      "check": "source_hash_and_cleaning_intersection",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/03b0ac7d99c44197a09640179f360f3c.glb",
+        "sha256": "d1535d624c7489181679d0dad50eaf07e2d68dfc0d326cd8ca6eb87db6437f7f",
+        "bytes": 3602852,
+        "original_strict_kept": true,
+        "v2_kept": true,
+        "v2_strict_kept": true,
+        "evidence_source": "assignment1_original_files",
+        "physical_strict_copy_exists": true,
+        "strict_membership_basis": "Original strict kept audit + strict index membership + identical rehashed source SHA-256"
+      }
+    },
+    {
+      "scope": "camera",
+      "check": "dataset_cameras_and_rgba",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "views": {
+          "train": 72,
+          "test": 12,
+          "orbit": 60
+        },
+        "unique_camera_poses": 144,
+        "cross_split_camera_overlap": 0,
+        "orbit_azimuth_offset_degrees": 2,
+        "checked_rgba_images": 84,
+        "minimum_foreground_border_margin_pixels": 15,
+        "minimum_foreground_pixels": 29474,
+        "input_size": [
+          384,
+          384
+        ]
+      }
+    },
+    {
+      "scope": "camera",
+      "check": "matching_arrays_csv_summary",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "feature_archives": 72,
+        "pair_archives": 288,
+        "keypoints": 20586,
+        "ratio_matches": 19758,
+        "ransac_inliers": 17448,
+        "triangulated_observations": 17374,
+        "sparse_points": 6961,
+        "arrays_csv_summary_consistent": true
+      }
+    },
+    {
+      "scope": "camera",
+      "check": "checkpoint_and_independent_test_metrics",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "checkpoint_bytes": 15933284,
+        "learned_tensors": 8,
+        "all_tensors_finite": true,
+        "train_views": 72,
+        "steps": 3000,
+        "independent_test_views": 12,
+        "test_paths_match_test_split": true,
+        "psnr": 28.470358311548743,
+        "foreground_psnr": 25.658810798501666,
+        "ssim": 0.9242403308550516,
+        "mask_iou": 0.9774639188551988
+      }
+    },
+    {
+      "scope": "camera",
+      "check": "gif_and_orbit_decode",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "frames": 60,
+        "size": [
+          256,
+          256
+        ],
+        "different_frames": 60,
+        "duration_ms": 4800,
+        "decoded_orbit_pngs": 60,
+        "bytes": 1563122
+      }
+    },
+    {
+      "scope": "camera",
+      "check": "learned_reconstruction_ply",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "vertices": 21697,
+        "faces": 43534,
+        "bytes": 1152125,
+        "header_bytes": 364,
+        "source_geometry_used": false,
+        "threshold": 10.599318687424962,
+        "adaptive_threshold_used": false
+      }
+    },
+    {
+      "scope": "camera",
+      "check": "optional_colmap_metrics",
+      "mandatory": false,
+      "status": "passed",
+      "evidence": {
+        "available": true,
+        "required": false,
+        "status": "complete",
+        "registered_image_ratio": 1.0,
+        "sparse_points": 2531,
+        "reported_reason": null
+      }
+    },
+    {
+      "scope": "barrel",
+      "check": "source_hash_and_cleaning_intersection",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/624f8d104cee405092161fc7447c78f1.glb",
+        "sha256": "eda65b437949d3da61151ac6e4cd48deab538224c8cbda4fd373f05f770e26ff",
+        "bytes": 2423864,
+        "original_strict_kept": true,
+        "v2_kept": true,
+        "v2_strict_kept": true,
+        "evidence_source": "assignment1_original_files",
+        "physical_strict_copy_exists": true,
+        "strict_membership_basis": "Original strict kept audit + strict index membership + identical rehashed source SHA-256"
+      }
+    },
+    {
+      "scope": "barrel",
+      "check": "dataset_cameras_and_rgba",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "views": {
+          "train": 72,
+          "test": 12,
+          "orbit": 60
+        },
+        "unique_camera_poses": 144,
+        "cross_split_camera_overlap": 0,
+        "orbit_azimuth_offset_degrees": 2,
+        "checked_rgba_images": 84,
+        "minimum_foreground_border_margin_pixels": 19,
+        "minimum_foreground_pixels": 58396,
+        "input_size": [
+          384,
+          384
+        ]
+      }
+    },
+    {
+      "scope": "barrel",
+      "check": "matching_arrays_csv_summary",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "feature_archives": 72,
+        "pair_archives": 288,
+        "keypoints": 15830,
+        "ratio_matches": 13299,
+        "ransac_inliers": 10777,
+        "triangulated_observations": 10551,
+        "sparse_points": 4117,
+        "arrays_csv_summary_consistent": true
+      }
+    },
+    {
+      "scope": "barrel",
+      "check": "checkpoint_and_independent_test_metrics",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "checkpoint_bytes": 15933348,
+        "learned_tensors": 8,
+        "all_tensors_finite": true,
+        "train_views": 72,
+        "steps": 3000,
+        "independent_test_views": 12,
+        "test_paths_match_test_split": true,
+        "psnr": 26.976369801944372,
+        "foreground_psnr": 27.89706383790248,
+        "ssim": 0.8591616402069727,
+        "mask_iou": 0.9796664207431623
+      }
+    },
+    {
+      "scope": "barrel",
+      "check": "gif_and_orbit_decode",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "frames": 60,
+        "size": [
+          256,
+          256
+        ],
+        "different_frames": 60,
+        "duration_ms": 4800,
+        "decoded_orbit_pngs": 60,
+        "bytes": 1966500
+      }
+    },
+    {
+      "scope": "barrel",
+      "check": "learned_reconstruction_ply",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "vertices": 22516,
+        "faces": 45088,
+        "bytes": 1194440,
+        "header_bytes": 364,
+        "source_geometry_used": false,
+        "threshold": 10.599318687424962,
+        "adaptive_threshold_used": false
+      }
+    },
+    {
+      "scope": "barrel",
+      "check": "optional_colmap_metrics",
+      "mandatory": false,
+      "status": "passed",
+      "evidence": {
+        "available": true,
+        "required": false,
+        "status": "complete",
+        "registered_image_ratio": 1.0,
+        "sparse_points": 3079,
+        "reported_reason": null
+      }
+    },
+    {
+      "scope": "rock",
+      "check": "source_hash_and_cleaning_intersection",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/3189bb396f8b4847afd3cb821dc4b919.glb",
+        "sha256": "e9c062de569d5ed1ae557d904a3bdd6ff40c5ba0e42aa6b37d6fb8c4720dc4ca",
+        "bytes": 3057200,
+        "original_strict_kept": true,
+        "v2_kept": true,
+        "v2_strict_kept": true,
+        "evidence_source": "assignment1_original_files",
+        "physical_strict_copy_exists": true,
+        "strict_membership_basis": "Original strict kept audit + strict index membership + identical rehashed source SHA-256"
+      }
+    },
+    {
+      "scope": "rock",
+      "check": "dataset_cameras_and_rgba",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "views": {
+          "train": 72,
+          "test": 12,
+          "orbit": 60
+        },
+        "unique_camera_poses": 144,
+        "cross_split_camera_overlap": 0,
+        "orbit_azimuth_offset_degrees": 2,
+        "checked_rgba_images": 84,
+        "minimum_foreground_border_margin_pixels": 26,
+        "minimum_foreground_pixels": 29800,
+        "input_size": [
+          384,
+          384
+        ]
+      }
+    },
+    {
+      "scope": "rock",
+      "check": "matching_arrays_csv_summary",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "feature_archives": 72,
+        "pair_archives": 288,
+        "keypoints": 44022,
+        "ratio_matches": 41900,
+        "ransac_inliers": 40013,
+        "triangulated_observations": 40001,
+        "sparse_points": 13172,
+        "arrays_csv_summary_consistent": true
+      }
+    },
+    {
+      "scope": "rock",
+      "check": "checkpoint_and_independent_test_metrics",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "checkpoint_bytes": 15933348,
+        "learned_tensors": 8,
+        "all_tensors_finite": true,
+        "train_views": 72,
+        "steps": 3000,
+        "independent_test_views": 12,
+        "test_paths_match_test_split": true,
+        "psnr": 32.295455301633375,
+        "foreground_psnr": 29.096988794192594,
+        "ssim": 0.938762441277504,
+        "mask_iou": 0.986815965844305
+      }
+    },
+    {
+      "scope": "rock",
+      "check": "gif_and_orbit_decode",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "frames": 60,
+        "size": [
+          256,
+          256
+        ],
+        "different_frames": 60,
+        "duration_ms": 4800,
+        "decoded_orbit_pngs": 60,
+        "bytes": 1483364
+      }
+    },
+    {
+      "scope": "rock",
+      "check": "learned_reconstruction_ply",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "vertices": 16675,
+        "faces": 33394,
+        "bytes": 884711,
+        "header_bytes": 364,
+        "source_geometry_used": false,
+        "threshold": 10.599318687424962,
+        "adaptive_threshold_used": false
+      }
+    },
+    {
+      "scope": "rock",
+      "check": "optional_colmap_metrics",
+      "mandatory": false,
+      "status": "passed",
+      "evidence": {
+        "available": true,
+        "required": false,
+        "status": "complete",
+        "registered_image_ratio": 1.0,
+        "sparse_points": 4743,
+        "reported_reason": null
+      }
+    },
+    {
+      "scope": "telephone",
+      "check": "source_hash_and_cleaning_intersection",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/03af8be8df5946229b9bc30b6dcb2c54.glb",
+        "sha256": "9e50c6dedfa40be283c7413a517faaaec027419e3768acf442d9d66f2ad7a4ae",
+        "bytes": 6347784,
+        "original_strict_kept": true,
+        "v2_kept": true,
+        "v2_strict_kept": true,
+        "evidence_source": "assignment1_original_files",
+        "physical_strict_copy_exists": true,
+        "strict_membership_basis": "Original strict kept audit + strict index membership + identical rehashed source SHA-256"
+      }
+    },
+    {
+      "scope": "telephone",
+      "check": "dataset_cameras_and_rgba",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "views": {
+          "train": 72,
+          "test": 12,
+          "orbit": 60
+        },
+        "unique_camera_poses": 144,
+        "cross_split_camera_overlap": 0,
+        "orbit_azimuth_offset_degrees": 2,
+        "checked_rgba_images": 84,
+        "minimum_foreground_border_margin_pixels": 2,
+        "minimum_foreground_pixels": 10802,
+        "input_size": [
+          384,
+          384
+        ]
+      }
+    },
+    {
+      "scope": "telephone",
+      "check": "matching_arrays_csv_summary",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "feature_archives": 72,
+        "pair_archives": 288,
+        "keypoints": 5929,
+        "ratio_matches": 4191,
+        "ransac_inliers": 3059,
+        "triangulated_observations": 2660,
+        "sparse_points": 1462,
+        "arrays_csv_summary_consistent": true
+      }
+    },
+    {
+      "scope": "telephone",
+      "check": "checkpoint_and_independent_test_metrics",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "checkpoint_bytes": 15933348,
+        "learned_tensors": 8,
+        "all_tensors_finite": true,
+        "train_views": 72,
+        "steps": 3000,
+        "independent_test_views": 12,
+        "test_paths_match_test_split": true,
+        "psnr": 22.51486507499329,
+        "foreground_psnr": 19.273733048946344,
+        "ssim": 0.8747780472040176,
+        "mask_iou": 0.8364538648172157
+      }
+    },
+    {
+      "scope": "telephone",
+      "check": "gif_and_orbit_decode",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "frames": 60,
+        "size": [
+          256,
+          256
+        ],
+        "different_frames": 60,
+        "duration_ms": 4800,
+        "decoded_orbit_pngs": 60,
+        "bytes": 1697576
+      }
+    },
+    {
+      "scope": "telephone",
+      "check": "learned_reconstruction_ply",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "vertices": 12401,
+        "faces": 24834,
+        "bytes": 658033,
+        "header_bytes": 364,
+        "source_geometry_used": false,
+        "threshold": 10.599318687424962,
+        "adaptive_threshold_used": false
+      }
+    },
+    {
+      "scope": "telephone",
+      "check": "optional_colmap_metrics",
+      "mandatory": false,
+      "status": "passed",
+      "evidence": {
+        "available": true,
+        "required": false,
+        "status": "partial",
+        "registered_image_ratio": 0.9166666666666666,
+        "sparse_points": 1398,
+        "reported_reason": null
+      }
+    },
+    {
+      "scope": "boots",
+      "check": "source_hash_and_cleaning_intersection",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/01e35903910841fdb2f3c4dc41ff8b74.glb",
+        "sha256": "829840e3b9ef72563f1b844afab8998eee0a5d9ce8bcd15530e91d5bc31bef85",
+        "bytes": 4886872,
+        "original_strict_kept": true,
+        "v2_kept": true,
+        "v2_strict_kept": true,
+        "evidence_source": "assignment1_original_files",
+        "physical_strict_copy_exists": true,
+        "strict_membership_basis": "Original strict kept audit + strict index membership + identical rehashed source SHA-256"
+      }
+    },
+    {
+      "scope": "boots",
+      "check": "dataset_cameras_and_rgba",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "views": {
+          "train": 72,
+          "test": 12,
+          "orbit": 60
+        },
+        "unique_camera_poses": 144,
+        "cross_split_camera_overlap": 0,
+        "orbit_azimuth_offset_degrees": 2,
+        "checked_rgba_images": 84,
+        "minimum_foreground_border_margin_pixels": 3,
+        "minimum_foreground_pixels": 20523,
+        "input_size": [
+          384,
+          384
+        ]
+      }
+    },
+    {
+      "scope": "boots",
+      "check": "matching_arrays_csv_summary",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "feature_archives": 72,
+        "pair_archives": 288,
+        "keypoints": 4259,
+        "ratio_matches": 3943,
+        "ransac_inliers": 2828,
+        "triangulated_observations": 2225,
+        "sparse_points": 1454,
+        "arrays_csv_summary_consistent": true
+      }
+    },
+    {
+      "scope": "boots",
+      "check": "checkpoint_and_independent_test_metrics",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "checkpoint_bytes": 15933348,
+        "learned_tensors": 8,
+        "all_tensors_finite": true,
+        "train_views": 72,
+        "steps": 3000,
+        "independent_test_views": 12,
+        "test_paths_match_test_split": true,
+        "psnr": 27.0141504713278,
+        "foreground_psnr": 25.007523263212207,
+        "ssim": 0.9417513012886047,
+        "mask_iou": 0.9459419627252856
+      }
+    },
+    {
+      "scope": "boots",
+      "check": "gif_and_orbit_decode",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "frames": 60,
+        "size": [
+          256,
+          256
+        ],
+        "different_frames": 60,
+        "duration_ms": 4800,
+        "decoded_orbit_pngs": 60,
+        "bytes": 1348443
+      }
+    },
+    {
+      "scope": "boots",
+      "check": "learned_reconstruction_ply",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "vertices": 17042,
+        "faces": 34216,
+        "bytes": 905306,
+        "header_bytes": 364,
+        "source_geometry_used": false,
+        "threshold": 10.599318687424962,
+        "adaptive_threshold_used": false
+      }
+    },
+    {
+      "scope": "boots",
+      "check": "optional_colmap_metrics",
+      "mandatory": false,
+      "status": "passed",
+      "evidence": {
+        "available": true,
+        "required": false,
+        "status": "partial",
+        "registered_image_ratio": 0.125,
+        "sparse_points": 108,
+        "reported_reason": null
+      }
+    },
+    {
+      "scope": "radio",
+      "check": "source_hash_and_cleaning_intersection",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/04c6b0d6e35446d2a42d4033f4e286c9.glb",
+        "sha256": "3f47b1f2772254ae83aeebab3bceb1e72a604a881a4f7cc73a2942218f9dec9b",
+        "bytes": 2351444,
+        "original_strict_kept": true,
+        "v2_kept": true,
+        "v2_strict_kept": true,
+        "evidence_source": "assignment1_original_files",
+        "physical_strict_copy_exists": true,
+        "strict_membership_basis": "Original strict kept audit + strict index membership + identical rehashed source SHA-256"
+      }
+    },
+    {
+      "scope": "radio",
+      "check": "dataset_cameras_and_rgba",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "views": {
+          "train": 72,
+          "test": 12,
+          "orbit": 60
+        },
+        "unique_camera_poses": 144,
+        "cross_split_camera_overlap": 0,
+        "orbit_azimuth_offset_degrees": 2,
+        "checked_rgba_images": 84,
+        "minimum_foreground_border_margin_pixels": 15,
+        "minimum_foreground_pixels": 23915,
+        "input_size": [
+          384,
+          384
+        ]
+      }
+    },
+    {
+      "scope": "radio",
+      "check": "matching_arrays_csv_summary",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "feature_archives": 72,
+        "pair_archives": 288,
+        "keypoints": 18449,
+        "ratio_matches": 16148,
+        "ransac_inliers": 13574,
+        "triangulated_observations": 13400,
+        "sparse_points": 6793,
+        "arrays_csv_summary_consistent": true
+      }
+    },
+    {
+      "scope": "radio",
+      "check": "checkpoint_and_independent_test_metrics",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "checkpoint_bytes": 15933348,
+        "learned_tensors": 8,
+        "all_tensors_finite": true,
+        "train_views": 72,
+        "steps": 3000,
+        "independent_test_views": 12,
+        "test_paths_match_test_split": true,
+        "psnr": 26.753462085185618,
+        "foreground_psnr": 24.724298333493028,
+        "ssim": 0.9109198898077011,
+        "mask_iou": 0.9601053303630275
+      }
+    },
+    {
+      "scope": "radio",
+      "check": "gif_and_orbit_decode",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "frames": 60,
+        "size": [
+          256,
+          256
+        ],
+        "different_frames": 60,
+        "duration_ms": 4800,
+        "decoded_orbit_pngs": 60,
+        "bytes": 1809081
+      }
+    },
+    {
+      "scope": "radio",
+      "check": "learned_reconstruction_ply",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "vertices": 19864,
+        "faces": 39832,
+        "bytes": 1054508,
+        "header_bytes": 364,
+        "source_geometry_used": false,
+        "threshold": 10.599318687424962,
+        "adaptive_threshold_used": false
+      }
+    },
+    {
+      "scope": "radio",
+      "check": "optional_colmap_metrics",
+      "mandatory": false,
+      "status": "passed",
+      "evidence": {
+        "available": true,
+        "required": false,
+        "status": "complete",
+        "registered_image_ratio": 1.0,
+        "sparse_points": 2142,
+        "reported_reason": null
+      }
+    },
+    {
+      "scope": "lion",
+      "check": "source_hash_and_cleaning_intersection",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/c37d22acc31a41c5aa353f28a8494c1d.glb",
+        "sha256": "0f7f484dc0c9cb79c8c567dddc63874729080df77215aa885cabc55522c30579",
+        "bytes": 1646636,
+        "original_strict_kept": true,
+        "v2_kept": true,
+        "v2_strict_kept": true,
+        "evidence_source": "assignment1_original_files",
+        "physical_strict_copy_exists": true,
+        "strict_membership_basis": "Original strict kept audit + strict index membership + identical rehashed source SHA-256"
+      }
+    },
+    {
+      "scope": "lion",
+      "check": "dataset_cameras_and_rgba",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "views": {
+          "train": 72,
+          "test": 12,
+          "orbit": 60
+        },
+        "unique_camera_poses": 144,
+        "cross_split_camera_overlap": 0,
+        "orbit_azimuth_offset_degrees": 2,
+        "checked_rgba_images": 84,
+        "minimum_foreground_border_margin_pixels": 10,
+        "minimum_foreground_pixels": 7403,
+        "input_size": [
+          384,
+          384
+        ]
+      }
+    },
+    {
+      "scope": "lion",
+      "check": "matching_arrays_csv_summary",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "feature_archives": 72,
+        "pair_archives": 288,
+        "keypoints": 15407,
+        "ratio_matches": 15045,
+        "ransac_inliers": 13416,
+        "triangulated_observations": 13285,
+        "sparse_points": 6216,
+        "arrays_csv_summary_consistent": true
+      }
+    },
+    {
+      "scope": "lion",
+      "check": "checkpoint_and_independent_test_metrics",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "checkpoint_bytes": 15933348,
+        "learned_tensors": 8,
+        "all_tensors_finite": true,
+        "train_views": 72,
+        "steps": 3000,
+        "independent_test_views": 12,
+        "test_paths_match_test_split": true,
+        "psnr": 30.602616566349145,
+        "foreground_psnr": 24.69892461054254,
+        "ssim": 0.953214685122172,
+        "mask_iou": 0.8350860293607094
+      }
+    },
+    {
+      "scope": "lion",
+      "check": "gif_and_orbit_decode",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "frames": 60,
+        "size": [
+          256,
+          256
+        ],
+        "different_frames": 60,
+        "duration_ms": 4800,
+        "decoded_orbit_pngs": 60,
+        "bytes": 1191858
+      }
+    },
+    {
+      "scope": "lion",
+      "check": "learned_reconstruction_ply",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "vertices": 16904,
+        "faces": 33840,
+        "bytes": 896692,
+        "header_bytes": 364,
+        "source_geometry_used": false,
+        "threshold": 10.599318687424962,
+        "adaptive_threshold_used": false
+      }
+    },
+    {
+      "scope": "lion",
+      "check": "optional_colmap_metrics",
+      "mandatory": false,
+      "status": "passed",
+      "evidence": {
+        "available": true,
+        "required": false,
+        "status": "partial",
+        "registered_image_ratio": 0.9305555555555556,
+        "sparse_points": 1584,
+        "reported_reason": null
+      }
+    },
+    {
+      "scope": "cart",
+      "check": "source_hash_and_cleaning_intersection",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/034e31bc4b8a471699c3056b671b97b3.glb",
+        "sha256": "508976b223c1d6145f00156ac6eaafb9aed62d389e22adcf878351db71bb7ad7",
+        "bytes": 581132,
+        "original_strict_kept": true,
+        "v2_kept": true,
+        "v2_strict_kept": true,
+        "evidence_source": "assignment1_original_files",
+        "physical_strict_copy_exists": true,
+        "strict_membership_basis": "Original strict kept audit + strict index membership + identical rehashed source SHA-256"
+      }
+    },
+    {
+      "scope": "cart",
+      "check": "dataset_cameras_and_rgba",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "views": {
+          "train": 72,
+          "test": 12,
+          "orbit": 60
+        },
+        "unique_camera_poses": 144,
+        "cross_split_camera_overlap": 0,
+        "orbit_azimuth_offset_degrees": 2,
+        "checked_rgba_images": 84,
+        "minimum_foreground_border_margin_pixels": 20,
+        "minimum_foreground_pixels": 9079,
+        "input_size": [
+          384,
+          384
+        ]
+      }
+    },
+    {
+      "scope": "cart",
+      "check": "matching_arrays_csv_summary",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "feature_archives": 72,
+        "pair_archives": 288,
+        "keypoints": 14527,
+        "ratio_matches": 8379,
+        "ransac_inliers": 6520,
+        "triangulated_observations": 5787,
+        "sparse_points": 3853,
+        "arrays_csv_summary_consistent": true
+      }
+    },
+    {
+      "scope": "cart",
+      "check": "checkpoint_and_independent_test_metrics",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "checkpoint_bytes": 15933348,
+        "learned_tensors": 8,
+        "all_tensors_finite": true,
+        "train_views": 72,
+        "steps": 3000,
+        "independent_test_views": 12,
+        "test_paths_match_test_split": true,
+        "psnr": 27.26195694246455,
+        "foreground_psnr": 22.503157672533305,
+        "ssim": 0.9291578133900961,
+        "mask_iou": 0.8657692014546762
+      }
+    },
+    {
+      "scope": "cart",
+      "check": "gif_and_orbit_decode",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "frames": 60,
+        "size": [
+          256,
+          256
+        ],
+        "different_frames": 60,
+        "duration_ms": 4800,
+        "decoded_orbit_pngs": 60,
+        "bytes": 1510763
+      }
+    },
+    {
+      "scope": "cart",
+      "check": "learned_reconstruction_ply",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "vertices": 10508,
+        "faces": 21096,
+        "bytes": 558328,
+        "header_bytes": 364,
+        "source_geometry_used": false,
+        "threshold": 10.599318687424962,
+        "adaptive_threshold_used": false
+      }
+    },
+    {
+      "scope": "cart",
+      "check": "optional_colmap_metrics",
+      "mandatory": false,
+      "status": "passed",
+      "evidence": {
+        "available": true,
+        "required": false,
+        "status": "partial",
+        "registered_image_ratio": 0.9444444444444444,
+        "sparse_points": 2063,
+        "reported_reason": null
+      }
+    },
+    {
+      "scope": "chest",
+      "check": "source_hash_and_cleaning_intersection",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/0451dc8905f140639e0d081e78ea6b86.glb",
+        "sha256": "436312edbbc38f74e31c147250440edd7a80880b29483fd5aacf52e3b250806b",
+        "bytes": 3594248,
+        "original_strict_kept": true,
+        "v2_kept": true,
+        "v2_strict_kept": true,
+        "evidence_source": "assignment1_original_files",
+        "physical_strict_copy_exists": true,
+        "strict_membership_basis": "Original strict kept audit + strict index membership + identical rehashed source SHA-256"
+      }
+    },
+    {
+      "scope": "chest",
+      "check": "dataset_cameras_and_rgba",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "views": {
+          "train": 72,
+          "test": 12,
+          "orbit": 60
+        },
+        "unique_camera_poses": 144,
+        "cross_split_camera_overlap": 0,
+        "orbit_azimuth_offset_degrees": 2,
+        "checked_rgba_images": 84,
+        "minimum_foreground_border_margin_pixels": 12,
+        "minimum_foreground_pixels": 41911,
+        "input_size": [
+          384,
+          384
+        ]
+      }
+    },
+    {
+      "scope": "chest",
+      "check": "matching_arrays_csv_summary",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "feature_archives": 72,
+        "pair_archives": 288,
+        "keypoints": 10637,
+        "ratio_matches": 9369,
+        "ransac_inliers": 5972,
+        "triangulated_observations": 4823,
+        "sparse_points": 3301,
+        "arrays_csv_summary_consistent": true
+      }
+    },
+    {
+      "scope": "chest",
+      "check": "checkpoint_and_independent_test_metrics",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "checkpoint_bytes": 15933348,
+        "learned_tensors": 8,
+        "all_tensors_finite": true,
+        "train_views": 72,
+        "steps": 3000,
+        "independent_test_views": 12,
+        "test_paths_match_test_split": true,
+        "psnr": 31.043782533935573,
+        "foreground_psnr": 28.424131077706708,
+        "ssim": 0.9371512879927953,
+        "mask_iou": 0.9831519226771109
+      }
+    },
+    {
+      "scope": "chest",
+      "check": "gif_and_orbit_decode",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "frames": 60,
+        "size": [
+          256,
+          256
+        ],
+        "different_frames": 60,
+        "duration_ms": 4800,
+        "decoded_orbit_pngs": 60,
+        "bytes": 1732137
+      }
+    },
+    {
+      "scope": "chest",
+      "check": "learned_reconstruction_ply",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "vertices": 21401,
+        "faces": 42814,
+        "bytes": 1134773,
+        "header_bytes": 364,
+        "source_geometry_used": false,
+        "threshold": 10.599318687424962,
+        "adaptive_threshold_used": false
+      }
+    },
+    {
+      "scope": "chest",
+      "check": "optional_colmap_metrics",
+      "mandatory": false,
+      "status": "passed",
+      "evidence": {
+        "available": true,
+        "required": false,
+        "status": "partial",
+        "registered_image_ratio": 0.75,
+        "sparse_points": 989,
+        "reported_reason": null
+      }
+    },
+    {
+      "scope": "truck",
+      "check": "source_hash_and_cleaning_intersection",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/0563c6e7a4ac4f02b6914f4f6e32b7fa.glb",
+        "sha256": "70afde45bcd4dca9a41127bdaff5de1bdcc8f3a4a2daf898deab768d4ecef26c",
+        "bytes": 2617520,
+        "original_strict_kept": true,
+        "v2_kept": true,
+        "v2_strict_kept": true,
+        "evidence_source": "assignment1_original_files",
+        "physical_strict_copy_exists": true,
+        "strict_membership_basis": "Original strict kept audit + strict index membership + identical rehashed source SHA-256"
+      }
+    },
+    {
+      "scope": "truck",
+      "check": "dataset_cameras_and_rgba",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "views": {
+          "train": 72,
+          "test": 12,
+          "orbit": 60
+        },
+        "unique_camera_poses": 144,
+        "cross_split_camera_overlap": 0,
+        "orbit_azimuth_offset_degrees": 2,
+        "checked_rgba_images": 84,
+        "minimum_foreground_border_margin_pixels": 35,
+        "minimum_foreground_pixels": 11554,
+        "input_size": [
+          384,
+          384
+        ]
+      }
+    },
+    {
+      "scope": "truck",
+      "check": "matching_arrays_csv_summary",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "feature_archives": 72,
+        "pair_archives": 288,
+        "keypoints": 9050,
+        "ratio_matches": 7095,
+        "ransac_inliers": 5520,
+        "triangulated_observations": 4889,
+        "sparse_points": 3208,
+        "arrays_csv_summary_consistent": true
+      }
+    },
+    {
+      "scope": "truck",
+      "check": "checkpoint_and_independent_test_metrics",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "checkpoint_bytes": 15933348,
+        "learned_tensors": 8,
+        "all_tensors_finite": true,
+        "train_views": 72,
+        "steps": 3000,
+        "independent_test_views": 12,
+        "test_paths_match_test_split": true,
+        "psnr": 26.293089708861714,
+        "foreground_psnr": 21.063618975141758,
+        "ssim": 0.9344920466343561,
+        "mask_iou": 0.9544887993423964
+      }
+    },
+    {
+      "scope": "truck",
+      "check": "gif_and_orbit_decode",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "frames": 60,
+        "size": [
+          256,
+          256
+        ],
+        "different_frames": 60,
+        "duration_ms": 4800,
+        "decoded_orbit_pngs": 60,
+        "bytes": 1343137
+      }
+    },
+    {
+      "scope": "truck",
+      "check": "learned_reconstruction_ply",
+      "mandatory": true,
+      "status": "passed",
+      "evidence": {
+        "vertices": 14202,
+        "faces": 28460,
+        "bytes": 753798,
+        "header_bytes": 364,
+        "source_geometry_used": false,
+        "threshold": 10.599318687424962,
+        "adaptive_threshold_used": false
+      }
+    },
+    {
+      "scope": "truck",
+      "check": "optional_colmap_metrics",
+      "mandatory": false,
+      "status": "passed",
+      "evidence": {
+        "available": true,
+        "required": false,
+        "status": "partial",
+        "registered_image_ratio": 0.8472222222222222,
+        "sparse_points": 954,
+        "reported_reason": null
+      }
+    }
+  ],
+  "seconds": 28.250722646713257
+}

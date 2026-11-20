@@ -1,0 +1,132 @@
+{
+  "status": "partial",
+  "data": "/data/260010041/class_homework/3dv/assignment2/data/01e35903910841fdb2f3c4dc41ff8b74",
+  "output": "/data/260010041/class_homework/3dv/assignment2/results/01e35903910841fdb2f3c4dc41ff8b74/sfm",
+  "pycolmap_version": "3.13.0",
+  "device": "CPU",
+  "ground_truth_used_during_mapping": false,
+  "input_images": 72,
+  "registered_images": 9,
+  "registered_image_ratio": 0.125,
+  "sparse_points": 108,
+  "mean_reprojection_error_pixels": 0.9204250437828722,
+  "stage": "finished",
+  "fixed_calibration": {
+    "model": "PINHOLE",
+    "width": 384,
+    "height": 384,
+    "params": [
+      527.5156645352876,
+      527.5156645352876,
+      192.0,
+      192.0
+    ]
+  },
+  "database": {
+    "images": 72,
+    "cameras": 1,
+    "keypoints": 5287,
+    "raw_matches": 1771,
+    "matched_image_pairs": 2556,
+    "verification_records": 2556,
+    "verified_image_pairs_with_inliers": 66,
+    "inlier_matches": 1853,
+    "guided_matching_note": "Guided matching may add correspondences, so final inliers can exceed raw descriptor matches.",
+    "camera_parameters": [
+      [
+        527.5156645352876,
+        527.5156645352876,
+        192.0,
+        192.0
+      ]
+    ]
+  },
+  "models": [
+    {
+      "model_id": 0,
+      "registered_images": 2,
+      "registered_image_ratio": 0.027777777777777776,
+      "sparse_points": 32,
+      "mean_reprojection_error_pixels": 0.5013622929423568,
+      "registered_image_names": [
+        "train/036.png",
+        "train/037.png"
+      ]
+    },
+    {
+      "model_id": 1,
+      "registered_images": 9,
+      "registered_image_ratio": 0.125,
+      "sparse_points": 108,
+      "mean_reprojection_error_pixels": 0.9204250437828722,
+      "registered_image_names": [
+        "train/010.png",
+        "train/011.png",
+        "train/012.png",
+        "train/013.png",
+        "train/014.png",
+        "train/035.png",
+        "train/036.png",
+        "train/037.png",
+        "train/038.png"
+      ]
+    }
+  ],
+  "all_models_registered_images": 9,
+  "all_models_registered_image_ratio": 0.125,
+  "best_model_id": 1,
+  "camera_alignment": {
+    "status": "aligned",
+    "method": "least-squares Umeyama Sim(3), no per-camera fitting",
+    "compared_cameras": 9,
+    "scale": 0.3364234226037942,
+    "rotation": [
+      [
+        0.29218267022474714,
+        -0.10683593619473629,
+        0.9503764359230145
+      ],
+      [
+        -0.9529534056868375,
+        0.05130860942890533,
+        0.298742754202223
+      ],
+      [
+        -0.08067895518779739,
+        -0.9929519169304556,
+        -0.08681818273805891
+      ]
+    ],
+    "translation": [
+      -2.701982670178749,
+      -0.1510512978394416,
+      0.5634910156542657
+    ],
+    "camera_center_error": {
+      "mean": 0.11969290209905568,
+      "median": 0.11520097643430312,
+      "rmse": 0.12580603345666241,
+      "p95": 0.1725791643579422,
+      "max": 0.17381101702279197
+    },
+    "orientation_error_degrees": {
+      "mean": 4.384470534517088,
+      "median": 4.0576826939272195,
+      "rmse": 4.688396459750122,
+      "p95": 7.055344223839901,
+      "max": 7.250656985061654
+    },
+    "center_rmse_over_gt_trajectory_radius": 0.10791941089970893,
+    "ground_truth_used_during_mapping": false
+  },
+  "estimated_camera_parameters": [
+    [
+      527.5156645352876,
+      527.5156645352876,
+      192.0,
+      192.0
+    ]
+  ],
+  "intrinsics_unchanged": true,
+  "seconds": 8.0479154586792
+}

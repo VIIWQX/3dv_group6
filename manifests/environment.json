@@ -1,0 +1,25 @@
+{
+  "python": "3.10.20",
+  "platform": "Linux-5.14.0-284.25.1.el9_2.x86_64-x86_64-with-glibc2.31",
+  "packages": {
+    "torch": "2.1.2",
+    "numpy": "1.26.4",
+    "Pillow": "11.0.0",
+    "opencv-python-headless": "4.10.0.84",
+    "trimesh": "4.5.3",
+    "numba": "0.60.0",
+    "imageio": "2.37.0",
+    "scipy": "1.14.1",
+    "scikit-image": "0.24.0",
+    "matplotlib": "3.10.0",
+    "python-docx": "1.2.0",
+    "Markdown": "3.7",
+    "pycolmap": "3.13.0"
+  },
+  "gpu": "NVIDIA H100 80GB HBM3 MIG 3g.40gb",
+  "cuda_wheel": "12.1",
+  "seed": 42,
+  "matching_seed": 20261105,
+  "precision": "float32 train/render; float16 checkpoint storage",
+  "note": "GPU identity verified during successful CUDA execution; CPU SfM and software rasterization"
+}

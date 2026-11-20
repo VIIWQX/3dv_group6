@@ -1,0 +1,17 @@
+.venv/
+.pip-cache/
+__pycache__/
+*.py[cod]
+.cache/
+data/
+experiments/sfm_inputs/
+experiments/camera_smoke/
+experiments/rejected/
+experiments/**/checkpoint.pt
+previews/
+presentation/
+logs/
+*.zip
+!results/*/matching/complete_matching.zip
+*.tar.gz
+*.part

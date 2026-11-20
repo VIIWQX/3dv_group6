@@ -1,0 +1,131 @@
+{
+  "objects": [
+    {
+      "object_id": "camera",
+      "uid": "03b0ac7d99c44197a09640179f360f3c",
+      "psnr": 28.470358311548743,
+      "foreground_psnr": 25.658810798501666,
+      "ssim": 0.9242403308550516,
+      "mask_iou": 0.9774639188551988,
+      "training_seconds": 16.74357072263956,
+      "keypoints": 20586,
+      "ransac_inliers": 17448,
+      "sparse_points": 6961
+    },
+    {
+      "object_id": "barrel",
+      "uid": "624f8d104cee405092161fc7447c78f1",
+      "psnr": 26.976369801944372,
+      "foreground_psnr": 27.89706383790248,
+      "ssim": 0.8591616402069727,
+      "mask_iou": 0.9796664207431623,
+      "training_seconds": 17.50125975161791,
+      "keypoints": 15830,
+      "ransac_inliers": 10777,
+      "sparse_points": 4117
+    },
+    {
+      "object_id": "rock",
+      "uid": "3189bb396f8b4847afd3cb821dc4b919",
+      "psnr": 32.295455301633375,
+      "foreground_psnr": 29.096988794192594,
+      "ssim": 0.938762441277504,
+      "mask_iou": 0.986815965844305,
+      "training_seconds": 17.163423815742135,
+      "keypoints": 44022,
+      "ransac_inliers": 40013,
+      "sparse_points": 13172
+    },
+    {
+      "object_id": "telephone",
+      "uid": "03af8be8df5946229b9bc30b6dcb2c54",
+      "psnr": 22.51486507499329,
+      "foreground_psnr": 19.273733048946344,
+      "ssim": 0.8747780472040176,
+      "mask_iou": 0.8364538648172157,
+      "training_seconds": 45.882484098896384,
+      "keypoints": 5929,
+      "ransac_inliers": 3059,
+      "sparse_points": 1462
+    },
+    {
+      "object_id": "boots",
+      "uid": "01e35903910841fdb2f3c4dc41ff8b74",
+      "psnr": 27.0141504713278,
+      "foreground_psnr": 25.007523263212207,
+      "ssim": 0.9417513012886047,
+      "mask_iou": 0.9459419627252856,
+      "training_seconds": 30.873577021062374,
+      "keypoints": 4259,
+      "ransac_inliers": 2828,
+      "sparse_points": 1454
+    },
+    {
+      "object_id": "radio",
+      "uid": "04c6b0d6e35446d2a42d4033f4e286c9",
+      "psnr": 26.753462085185618,
+      "foreground_psnr": 24.724298333493028,
+      "ssim": 0.9109198898077011,
+      "mask_iou": 0.9601053303630275,
+      "training_seconds": 25.888792663812637,
+      "keypoints": 18449,
+      "ransac_inliers": 13574,
+      "sparse_points": 6793
+    },
+    {
+      "object_id": "lion",
+      "uid": "c37d22acc31a41c5aa353f28a8494c1d",
+      "psnr": 30.602616566349145,
+      "foreground_psnr": 24.69892461054254,
+      "ssim": 0.953214685122172,
+      "mask_iou": 0.8350860293607094,
+      "training_seconds": 28.94572963565588,
+      "keypoints": 15407,
+      "ransac_inliers": 13416,
+      "sparse_points": 6216
+    },
+    {
+      "object_id": "cart",
+      "uid": "034e31bc4b8a471699c3056b671b97b3",
+      "psnr": 27.26195694246455,
+      "foreground_psnr": 22.503157672533305,
+      "ssim": 0.9291578133900961,
+      "mask_iou": 0.8657692014546762,
+      "training_seconds": 18.070667082443833,
+      "keypoints": 14527,
+      "ransac_inliers": 6520,
+      "sparse_points": 3853
+    },
+    {
+      "object_id": "chest",
+      "uid": "0451dc8905f140639e0d081e78ea6b86",
+      "psnr": 31.043782533935573,
+      "foreground_psnr": 28.424131077706708,
+      "ssim": 0.9371512879927953,
+      "mask_iou": 0.9831519226771109,
+      "training_seconds": 30.944323729723692,
+      "keypoints": 10637,
+      "ransac_inliers": 5972,
+      "sparse_points": 3301
+    },
+    {
+      "object_id": "truck",
+      "uid": "0563c6e7a4ac4f02b6914f4f6e32b7fa",
+      "psnr": 26.293089708861714,
+      "foreground_psnr": 21.063618975141758,
+      "ssim": 0.9344920466343561,
+      "mask_iou": 0.9544887993423964,
+      "training_seconds": 16.442748414352536,
+      "keypoints": 9050,
+      "ransac_inliers": 5520,
+      "sparse_points": 3208
+    }
+  ],
+  "macro_average": {
+    "psnr": 27.922610679824412,
+    "foreground_psnr": 24.83482504121726,
+    "ssim": 0.920362948377927,
+    "mask_iou": 0.9324943416183087,
+    "training_seconds": 24.845657693594696
+  }
+}

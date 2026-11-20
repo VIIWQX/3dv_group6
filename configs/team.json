@@ -1,0 +1,12 @@
+{
+  "group_number": "6",
+  "identity_status": "小组编号、姓名与学号由组员提供",
+  "contribution_status": "沿用五人均衡分工方案，各承担20%的模块职责与对应对象复核",
+  "members": [
+    {"id": "260010184", "name": "李昱晔", "share_percent": 20, "contribution": "000-000数据筛选、清洗证据核验、来源与许可证整理；相机与木桶对象复核"},
+    {"id": "260010242", "name": "李宇怀", "share_percent": 20, "contribution": "多视角图像生成、相机坐标约定与数据划分；岩石与电话对象复核"},
+    {"id": "260010041", "name": "仵庆熹", "share_percent": 20, "contribution": "SIFT特征、点匹配、几何核验与稀疏点云；长靴与收音机对象复核"},
+    {"id": "260010171", "name": "曾子荣", "share_percent": 20, "contribution": "NeRF训练、模型检查点与新视角GIF；石狮与木推车对象复核"},
+    {"id": "260010193", "name": "刘景寒", "share_percent": 20, "contribution": "消融实验、评价统计、文档及提交包整合；箱子与卡车对象复核"}
+  ]
+}

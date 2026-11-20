@@ -1,0 +1,212 @@
+{
+  "status": "partial",
+  "data": "/data/260010041/class_homework/3dv/assignment2/data/0563c6e7a4ac4f02b6914f4f6e32b7fa",
+  "output": "/data/260010041/class_homework/3dv/assignment2/results/0563c6e7a4ac4f02b6914f4f6e32b7fa/sfm",
+  "pycolmap_version": "3.13.0",
+  "device": "CPU",
+  "ground_truth_used_during_mapping": false,
+  "input_images": 72,
+  "registered_images": 61,
+  "registered_image_ratio": 0.8472222222222222,
+  "sparse_points": 954,
+  "mean_reprojection_error_pixels": 0.7405197009649931,
+  "stage": "finished",
+  "fixed_calibration": {
+    "model": "PINHOLE",
+    "width": 384,
+    "height": 384,
+    "params": [
+      527.5156645352876,
+      527.5156645352876,
+      192.0,
+      192.0
+    ]
+  },
+  "database": {
+    "images": 72,
+    "cameras": 1,
+    "keypoints": 10693,
+    "raw_matches": 6435,
+    "matched_image_pairs": 2556,
+    "verification_records": 2556,
+    "verified_image_pairs_with_inliers": 216,
+    "inlier_matches": 7860,
+    "guided_matching_note": "Guided matching may add correspondences, so final inliers can exceed raw descriptor matches.",
+    "camera_parameters": [
+      [
+        527.5156645352876,
+        527.5156645352876,
+        192.0,
+        192.0
+      ]
+    ]
+  },
+  "models": [
+    {
+      "model_id": 0,
+      "registered_images": 61,
+      "registered_image_ratio": 0.8472222222222222,
+      "sparse_points": 954,
+      "mean_reprojection_error_pixels": 0.7405197009649931,
+      "registered_image_names": [
+        "train/000.png",
+        "train/001.png",
+        "train/002.png",
+        "train/003.png",
+        "train/008.png",
+        "train/009.png",
+        "train/010.png",
+        "train/011.png",
+        "train/012.png",
+        "train/013.png",
+        "train/014.png",
+        "train/015.png",
+        "train/016.png",
+        "train/017.png",
+        "train/018.png",
+        "train/019.png",
+        "train/020.png",
+        "train/021.png",
+        "train/022.png",
+        "train/023.png",
+        "train/024.png",
+        "train/025.png",
+        "train/026.png",
+        "train/027.png",
+        "train/032.png",
+        "train/033.png",
+        "train/034.png",
+        "train/035.png",
+        "train/036.png",
+        "train/037.png",
+        "train/038.png",
+        "train/039.png",
+        "train/040.png",
+        "train/041.png",
+        "train/042.png",
+        "train/043.png",
+        "train/044.png",
+        "train/045.png",
+        "train/046.png",
+        "train/047.png",
+        "train/048.png",
+        "train/049.png",
+        "train/050.png",
+        "train/051.png",
+        "train/052.png",
+        "train/056.png",
+        "train/057.png",
+        "train/058.png",
+        "train/059.png",
+        "train/060.png",
+        "train/061.png",
+        "train/062.png",
+        "train/063.png",
+        "train/064.png",
+        "train/065.png",
+        "train/066.png",
+        "train/067.png",
+        "train/068.png",
+        "train/069.png",
+        "train/070.png",
+        "train/071.png"
+      ]
+    },
+    {
+      "model_id": 1,
+      "registered_images": 5,
+      "registered_image_ratio": 0.06944444444444445,
+      "sparse_points": 59,
+      "mean_reprojection_error_pixels": 0.41283377570284907,
+      "registered_image_names": [
+        "train/052.png",
+        "train/053.png",
+        "train/054.png",
+        "train/055.png",
+        "train/056.png"
+      ]
+    },
+    {
+      "model_id": 2,
+      "registered_images": 4,
+      "registered_image_ratio": 0.05555555555555555,
+      "sparse_points": 61,
+      "mean_reprojection_error_pixels": 0.9181406814945849,
+      "registered_image_names": [
+        "train/004.png",
+        "train/005.png",
+        "train/006.png",
+        "train/007.png"
+      ]
+    },
+    {
+      "model_id": 3,
+      "registered_images": 3,
+      "registered_image_ratio": 0.041666666666666664,
+      "sparse_points": 35,
+      "mean_reprojection_error_pixels": 0.42005981234329537,
+      "registered_image_names": [
+        "train/028.png",
+        "train/029.png",
+        "train/030.png"
+      ]
+    }
+  ],
+  "all_models_registered_images": 71,
+  "all_models_registered_image_ratio": 0.9861111111111112,
+  "best_model_id": 0,
+  "camera_alignment": {
+    "status": "aligned",
+    "method": "least-squares Umeyama Sim(3), no per-camera fitting",
+    "compared_cameras": 61,
+    "scale": 0.7182673686158901,
+    "rotation": [
+      [
+        0.010357198645305826,
+        -0.29851136155088953,
+        0.95434988105058
+      ],
+      [
+        -0.9999448368692964,
+        -0.004759233904189773,
+        0.009363381391411445
+      ],
+      [
+        0.0017468985824849452,
+        -0.9543942145244175,
+        -0.29854418706058117
+      ]
+    ],
+    "translation": [
+      -0.09877998578563432,
+      -0.48512585114473283,
+      1.264742072476632
+    ],
+    "camera_center_error": {
+      "mean": 0.03788218188457148,
+      "median": 0.029537837572785927,
+      "rmse": 0.04692167616594679,
+      "p95": 0.07423900469692561,
+      "max": 0.188535852193899
+    },
+    "orientation_error_degrees": {
+      "mean": 0.874882888966737,
+      "median": 0.7023956301202375,
+      "rmse": 1.0949363584053942,
+      "p95": 2.232687812556079,
+      "max": 3.6925278661963685
+    },
+    "center_rmse_over_gt_trajectory_radius": 0.01731917530825368,
+    "ground_truth_used_during_mapping": false
+  },
+  "estimated_camera_parameters": [
+    [
+      527.5156645352876,
+      527.5156645352876,
+      192.0,
+      192.0
+    ]
+  ],
+  "intrinsics_unchanged": true,
+  "seconds": 10.512600421905518
+}

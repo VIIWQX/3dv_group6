@@ -1,0 +1,283 @@
+{
+  "schema_version": "assignment2-provenance-v1",
+  "selection_manifest": "manifests/selection.json",
+  "source_dataset": "Objaverse (Sketchfab assets downloaded and cleaned in Assignment 1)",
+  "source_revision": "21e4e142159e2153706c23a3a02e55cec5591cea",
+  "source_shards": [
+    "000-000"
+  ],
+  "source_metadata": {
+    "path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/metadata_000-000.json.gz",
+    "sha256": "165a21cf6711920993acdad3d001fab4dbc3e4f17ec98f097ddc0ffe186fc689"
+  },
+  "source_cleaning_audit": {
+    "path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/manifests/cleaning_000-000.jsonl",
+    "sha256": "e99f73535e5c101de0ede1ec261f085233c1db13b80ca5a73117b55ef4a1d156"
+  },
+  "selection_policy": "Only shard 000-000, intersection of V2 kept, V2 strict_status kept and original strict cleaned index. Static textured assets under 15 MB and under 150,000 faces; diverse categories and compact opaque shapes prioritized.",
+  "source_geometry_usage": "Read-only GLB geometry/materials are used solely to render controlled multi-view image inputs and reference views. NeRF/SfM must consume image inputs and camera calibration, never source triangles, source depth or source point samples.",
+  "image_provenance": "The local cleaned dataset contains meshes, not the original capture photographs. Views are synthetic observations rendered from cleaned GLBs; report results as synthetic multi-view reconstruction.",
+  "asset_license_evidence": "All ten selected local metadata records have license code by. The metadata does not state a Creative Commons license version, so no version is inferred. Attribution below is retained for source-derived renders.",
+  "repository_policy": "Keep original data licenses separate from any code license; an original code license does not relicense these assets or source-derived renders.",
+  "source_integrity": "All selected GLB SHA-256 values were recomputed from bytes and matched Assignment 1 audit records. Originals were not modified.",
+  "objects": [
+    {
+      "object_id": "camera",
+      "uid": "03b0ac7d99c44197a09640179f360f3c",
+      "name": "Canon AE-1 Program 35mm Film Camera",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/03b0ac7d99c44197a09640179f360f3c.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/03b0ac7d99c44197a09640179f360f3c.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/03b0ac7d99c44197a09640179f360f3c.glb",
+      "sha256": "d1535d624c7489181679d0dad50eaf07e2d68dfc0d326cd8ca6eb87db6437f7f",
+      "file_size_bytes": 3602852,
+      "viewer_url": "https://sketchfab.com/3d-models/03b0ac7d99c44197a09640179f360f3c",
+      "author": "Marc Sawyer",
+      "author_username": "whitewashstudio",
+      "author_profile_url": "https://sketchfab.com/whitewashstudio",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      }
+    },
+    {
+      "object_id": "barrel",
+      "uid": "624f8d104cee405092161fc7447c78f1",
+      "name": "Wooden Barrel",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/624f8d104cee405092161fc7447c78f1.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/624f8d104cee405092161fc7447c78f1.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/624f8d104cee405092161fc7447c78f1.glb",
+      "sha256": "eda65b437949d3da61151ac6e4cd48deab538224c8cbda4fd373f05f770e26ff",
+      "file_size_bytes": 2423864,
+      "viewer_url": "https://sketchfab.com/3d-models/624f8d104cee405092161fc7447c78f1",
+      "author": "jwkheir",
+      "author_username": "jwkheir",
+      "author_profile_url": "https://sketchfab.com/jwkheir",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      }
+    },
+    {
+      "object_id": "rock",
+      "uid": "3189bb396f8b4847afd3cb821dc4b919",
+      "name": "Rock Stone 15 .::RAWscan::.",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/3189bb396f8b4847afd3cb821dc4b919.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/3189bb396f8b4847afd3cb821dc4b919.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/3189bb396f8b4847afd3cb821dc4b919.glb",
+      "sha256": "e9c062de569d5ed1ae557d904a3bdd6ff40c5ba0e42aa6b37d6fb8c4720dc4ca",
+      "file_size_bytes": 3057200,
+      "viewer_url": "https://sketchfab.com/3d-models/3189bb396f8b4847afd3cb821dc4b919",
+      "author": "Andrea Spognetta (Spogna)",
+      "author_username": "spogna",
+      "author_profile_url": "https://sketchfab.com/spogna",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      }
+    },
+    {
+      "object_id": "telephone",
+      "uid": "03af8be8df5946229b9bc30b6dcb2c54",
+      "name": "Antique World War II German Telephone",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/03af8be8df5946229b9bc30b6dcb2c54.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/03af8be8df5946229b9bc30b6dcb2c54.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/03af8be8df5946229b9bc30b6dcb2c54.glb",
+      "sha256": "9e50c6dedfa40be283c7413a517faaaec027419e3768acf442d9d66f2ad7a4ae",
+      "file_size_bytes": 6347784,
+      "viewer_url": "https://sketchfab.com/3d-models/03af8be8df5946229b9bc30b6dcb2c54",
+      "author": "Ray Ferric",
+      "author_username": "rayferric",
+      "author_profile_url": "https://sketchfab.com/rayferric",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      }
+    },
+    {
+      "object_id": "boots",
+      "uid": "01e35903910841fdb2f3c4dc41ff8b74",
+      "name": "Leather Boots",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/01e35903910841fdb2f3c4dc41ff8b74.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/01e35903910841fdb2f3c4dc41ff8b74.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/01e35903910841fdb2f3c4dc41ff8b74.glb",
+      "sha256": "829840e3b9ef72563f1b844afab8998eee0a5d9ce8bcd15530e91d5bc31bef85",
+      "file_size_bytes": 4886872,
+      "viewer_url": "https://sketchfab.com/3d-models/01e35903910841fdb2f3c4dc41ff8b74",
+      "author": "Flenehens",
+      "author_username": "Flenehens",
+      "author_profile_url": "https://sketchfab.com/Flenehens",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      }
+    },
+    {
+      "object_id": "radio",
+      "uid": "04c6b0d6e35446d2a42d4033f4e286c9",
+      "name": "#3DST Old Radio",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/04c6b0d6e35446d2a42d4033f4e286c9.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/04c6b0d6e35446d2a42d4033f4e286c9.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/04c6b0d6e35446d2a42d4033f4e286c9.glb",
+      "sha256": "3f47b1f2772254ae83aeebab3bceb1e72a604a881a4f7cc73a2942218f9dec9b",
+      "file_size_bytes": 2351444,
+      "viewer_url": "https://sketchfab.com/3d-models/04c6b0d6e35446d2a42d4033f4e286c9",
+      "author": "Victor",
+      "author_username": "vtsst",
+      "author_profile_url": "https://sketchfab.com/vtsst",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      }
+    },
+    {
+      "object_id": "lion",
+      "uid": "c37d22acc31a41c5aa353f28a8494c1d",
+      "name": "Photogrammetry - Lion Statue",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/c37d22acc31a41c5aa353f28a8494c1d.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/c37d22acc31a41c5aa353f28a8494c1d.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/c37d22acc31a41c5aa353f28a8494c1d.glb",
+      "sha256": "0f7f484dc0c9cb79c8c567dddc63874729080df77215aa885cabc55522c30579",
+      "file_size_bytes": 1646636,
+      "viewer_url": "https://sketchfab.com/3d-models/c37d22acc31a41c5aa353f28a8494c1d",
+      "author": "Scott Roantree",
+      "author_username": "sroantree",
+      "author_profile_url": "https://sketchfab.com/sroantree",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      }
+    },
+    {
+      "object_id": "cart",
+      "uid": "034e31bc4b8a471699c3056b671b97b3",
+      "name": "Wooden cart",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/034e31bc4b8a471699c3056b671b97b3.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/034e31bc4b8a471699c3056b671b97b3.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/034e31bc4b8a471699c3056b671b97b3.glb",
+      "sha256": "508976b223c1d6145f00156ac6eaafb9aed62d389e22adcf878351db71bb7ad7",
+      "file_size_bytes": 581132,
+      "viewer_url": "https://sketchfab.com/3d-models/034e31bc4b8a471699c3056b671b97b3",
+      "author": "NikolZerg",
+      "author_username": "nikolzerg",
+      "author_profile_url": "https://sketchfab.com/nikolzerg",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      }
+    },
+    {
+      "object_id": "chest",
+      "uid": "0451dc8905f140639e0d081e78ea6b86",
+      "name": "Chest",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/0451dc8905f140639e0d081e78ea6b86.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/0451dc8905f140639e0d081e78ea6b86.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/0451dc8905f140639e0d081e78ea6b86.glb",
+      "sha256": "436312edbbc38f74e31c147250440edd7a80880b29483fd5aacf52e3b250806b",
+      "file_size_bytes": 3594248,
+      "viewer_url": "https://sketchfab.com/3d-models/0451dc8905f140639e0d081e78ea6b86",
+      "author": "Tidus",
+      "author_username": "JuegosChafas",
+      "author_profile_url": "https://sketchfab.com/JuegosChafas",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      }
+    },
+    {
+      "object_id": "truck",
+      "uid": "0563c6e7a4ac4f02b6914f4f6e32b7fa",
+      "name": "Dirty Old Truck",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/0563c6e7a4ac4f02b6914f4f6e32b7fa.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/0563c6e7a4ac4f02b6914f4f6e32b7fa.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/0563c6e7a4ac4f02b6914f4f6e32b7fa.glb",
+      "sha256": "70afde45bcd4dca9a41127bdaff5de1bdcc8f3a4a2daf898deab768d4ecef26c",
+      "file_size_bytes": 2617520,
+      "viewer_url": "https://sketchfab.com/3d-models/0563c6e7a4ac4f02b6914f4f6e32b7fa",
+      "author": "Jace B.",
+      "author_username": "snomss",
+      "author_profile_url": "https://sketchfab.com/snomss",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": []
+      }
+    }
+  ]
+}

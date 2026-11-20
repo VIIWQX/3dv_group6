@@ -1,0 +1,2398 @@
+{
+  "schema_version": "assignment2-object-candidates-v1",
+  "source_root": "/data/260010041/class_homework/3dv",
+  "source_revision": "21e4e142159e2153706c23a3a02e55cec5591cea",
+  "source_metadata_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/metadata_000-000.json.gz",
+  "source_audit_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/manifests/cleaning_000-000.jsonl",
+  "scope": {
+    "shards": [
+      "000-000"
+    ],
+    "v2_kept": 4963,
+    "strict_kept": 3183,
+    "selection_count": 20,
+    "recommended_count": 10,
+    "selection_policy": "Only shard 000-000, intersection of V2 kept, V2 strict_status kept and original strict cleaned index. Static textured assets under 15 MB and under 150,000 faces; diverse categories and compact opaque shapes prioritized."
+  },
+  "identity": {
+    "group_number": null,
+    "member_names": null,
+    "search_result": "No group number or names found in README.md, version2/README.md, or reports/Objaverse_000-000_数据清洗报告.md. Do not infer identities from author metadata."
+  },
+  "candidates": [
+    {
+      "uid": "03b0ac7d99c44197a09640179f360f3c",
+      "object_id": "camera",
+      "name": "Canon AE-1 Program 35mm Film Camera",
+      "recommended": true,
+      "priority": 1,
+      "category": "electronics",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/03b0ac7d99c44197a09640179f360f3c.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/03b0ac7d99c44197a09640179f360f3c.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/03b0ac7d99c44197a09640179f360f3c.glb",
+      "file_size_bytes": 3602852,
+      "sha256": "d1535d624c7489181679d0dad50eaf07e2d68dfc0d326cd8ca6eb87db6437f7f",
+      "viewer_url": "https://sketchfab.com/3d-models/03b0ac7d99c44197a09640179f360f3c",
+      "author": "Marc Sawyer",
+      "author_username": "whitewashstudio",
+      "author_profile_url": "https://sketchfab.com/whitewashstudio",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "film",
+        "35mm",
+        "canon",
+        "camera",
+        "ae-1",
+        "realitycapture",
+        "photogrammetry",
+        "blender",
+        "ae1"
+      ],
+      "categories": [
+        "electronics-gadgets"
+      ],
+      "geometry": {
+        "vertices": 40695,
+        "faces": 77532,
+        "scene_vertices": 40695,
+        "scene_faces": 77532,
+        "mesh_count": 1,
+        "scene_instances": 1,
+        "bounds": [
+          [
+            -0.051216163441287425,
+            -0.518812936481556,
+            -1.0254715112610964
+          ],
+          [
+            0.8877278913093941,
+            0.39527440644388756,
+            0.4158374893545961
+          ]
+        ],
+        "extents": [
+          0.9389440547506815,
+          0.9140873429254436,
+          1.4413090006156923
+        ],
+        "max_to_min_extent_ratio": 1.5767738299525398
+      },
+      "materials": {
+        "count": 1,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "baseColorTexture"
+          }
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "extensions_required": [],
+        "texture_count": 1,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      },
+      "selection_reason": "Scanned camera: rich local texture and distinct lens/body silhouette.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data."
+      ]
+    },
+    {
+      "uid": "624f8d104cee405092161fc7447c78f1",
+      "object_id": "barrel",
+      "name": "Wooden Barrel",
+      "recommended": true,
+      "priority": 2,
+      "category": "container",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/624f8d104cee405092161fc7447c78f1.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/624f8d104cee405092161fc7447c78f1.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/624f8d104cee405092161fc7447c78f1.glb",
+      "file_size_bytes": 2423864,
+      "sha256": "eda65b437949d3da61151ac6e4cd48deab538224c8cbda4fd373f05f770e26ff",
+      "viewer_url": "https://sketchfab.com/3d-models/624f8d104cee405092161fc7447c78f1",
+      "author": "jwkheir",
+      "author_username": "jwkheir",
+      "author_profile_url": "https://sketchfab.com/jwkheir",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "barrell",
+        "props",
+        "free3dmodel",
+        "real-time",
+        "freedownload",
+        "maya",
+        "gameart",
+        "gameasset",
+        "wood",
+        "free",
+        "marmosettoolbag4"
+      ],
+      "categories": [
+        "furniture-home"
+      ],
+      "geometry": {
+        "vertices": 2370,
+        "faces": 3040,
+        "scene_vertices": 2370,
+        "scene_faces": 3040,
+        "mesh_count": 1,
+        "scene_instances": 1,
+        "bounds": [
+          [
+            -0.3869840916920282,
+            -6.840097945633748e-17,
+            -0.3869840916920281
+          ],
+          [
+            0.3869842442799154,
+            1.0144357073060633,
+            0.3869842061329437
+          ]
+        ],
+        "extents": [
+          0.7739683359719436,
+          1.0144357073060633,
+          0.7739682978249718
+        ],
+        "max_to_min_extent_ratio": 1.3106941332827973
+      },
+      "materials": {
+        "count": 1,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "baseColorTexture"
+          }
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "extensions_required": [],
+        "texture_count": 3,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 1,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 2,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      },
+      "selection_reason": "Wood grain and metal bands; compact closed shape.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data."
+      ]
+    },
+    {
+      "uid": "3189bb396f8b4847afd3cb821dc4b919",
+      "object_id": "rock",
+      "name": "Rock Stone 15 .::RAWscan::.",
+      "recommended": true,
+      "priority": 3,
+      "category": "natural",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/3189bb396f8b4847afd3cb821dc4b919.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/3189bb396f8b4847afd3cb821dc4b919.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/3189bb396f8b4847afd3cb821dc4b919.glb",
+      "file_size_bytes": 3057200,
+      "sha256": "e9c062de569d5ed1ae557d904a3bdd6ff40c5ba0e42aa6b37d6fb8c4720dc4ca",
+      "viewer_url": "https://sketchfab.com/3d-models/3189bb396f8b4847afd3cb821dc4b919",
+      "author": "Andrea Spognetta (Spogna)",
+      "author_username": "spogna",
+      "author_profile_url": "https://sketchfab.com/spogna",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "photogrammetry",
+        "low",
+        "poly",
+        "stone",
+        "rock"
+      ],
+      "categories": [
+        "art-abstract",
+        "nature-plants"
+      ],
+      "geometry": {
+        "vertices": 14065,
+        "faces": 27278,
+        "scene_vertices": 14065,
+        "scene_faces": 27278,
+        "mesh_count": 1,
+        "scene_instances": 1,
+        "bounds": [
+          [
+            -0.20814499258995056,
+            -0.11452432721853252,
+            -0.1812441796064377
+          ],
+          [
+            0.20814499258995056,
+            0.11452566832304005,
+            0.18124581873416898
+          ]
+        ],
+        "extents": [
+          0.4162899851799011,
+          0.22904999554157257,
+          0.3624899983406067
+        ],
+        "max_to_min_extent_ratio": 1.8174634066052382
+      },
+      "materials": {
+        "count": 1,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "baseColorTexture"
+          }
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "extensions_required": [],
+        "texture_count": 4,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/jpeg",
+            "format": "JPEG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 1,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 2,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/jpeg",
+            "format": "JPEG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 3,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      },
+      "selection_reason": "Irregular scanned shape and nonrepeating surface texture.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data."
+      ]
+    },
+    {
+      "uid": "03af8be8df5946229b9bc30b6dcb2c54",
+      "object_id": "telephone",
+      "name": "Antique World War II German Telephone",
+      "recommended": true,
+      "priority": 4,
+      "category": "electronics",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/03af8be8df5946229b9bc30b6dcb2c54.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/03af8be8df5946229b9bc30b6dcb2c54.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/03af8be8df5946229b9bc30b6dcb2c54.glb",
+      "file_size_bytes": 6347784,
+      "sha256": "9e50c6dedfa40be283c7413a517faaaec027419e3768acf442d9d66f2ad7a4ae",
+      "viewer_url": "https://sketchfab.com/3d-models/03af8be8df5946229b9bc30b6dcb2c54",
+      "author": "Ray Ferric",
+      "author_username": "rayferric",
+      "author_profile_url": "https://sketchfab.com/rayferric",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "ww2",
+        "antique",
+        "detailed",
+        "germany",
+        "telephone",
+        "braided"
+      ],
+      "categories": [
+        "electronics-gadgets",
+        "furniture-home"
+      ],
+      "geometry": {
+        "vertices": 31967,
+        "faces": 34578,
+        "scene_vertices": 31967,
+        "scene_faces": 34578,
+        "mesh_count": 1,
+        "scene_instances": 1,
+        "bounds": [
+          [
+            -0.16645564138889313,
+            -0.0004487824917305261,
+            -0.19837971031665802
+          ],
+          [
+            0.18691043555736542,
+            0.13301433622837067,
+            0.13110989332199097
+          ]
+        ],
+        "extents": [
+          0.35336607694625854,
+          0.1334631187201012,
+          0.329489603638649
+        ],
+        "max_to_min_extent_ratio": 2.64766836212885
+      },
+      "materials": {
+        "count": 1,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "baseColorTexture"
+          }
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "extensions_required": [],
+        "texture_count": 3,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 1,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 2,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      },
+      "selection_reason": "Distinct handset, dial and cable; thin parts test coverage.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data."
+      ]
+    },
+    {
+      "uid": "01e35903910841fdb2f3c4dc41ff8b74",
+      "object_id": "boots",
+      "name": "Leather Boots",
+      "recommended": true,
+      "priority": 5,
+      "category": "footwear",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/01e35903910841fdb2f3c4dc41ff8b74.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/01e35903910841fdb2f3c4dc41ff8b74.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/01e35903910841fdb2f3c4dc41ff8b74.glb",
+      "file_size_bytes": 4886872,
+      "sha256": "829840e3b9ef72563f1b844afab8998eee0a5d9ce8bcd15530e91d5bc31bef85",
+      "viewer_url": "https://sketchfab.com/3d-models/01e35903910841fdb2f3c4dc41ff8b74",
+      "author": "Flenehens",
+      "author_username": "Flenehens",
+      "author_profile_url": "https://sketchfab.com/Flenehens",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "armor",
+        "leather",
+        "medieval",
+        "boots",
+        "4k",
+        "game-ready",
+        "uvmapped",
+        "single-material"
+      ],
+      "categories": [
+        "characters-creatures",
+        "weapons-military"
+      ],
+      "geometry": {
+        "vertices": 12351,
+        "faces": 16622,
+        "scene_vertices": 12351,
+        "scene_faces": 16622,
+        "mesh_count": 1,
+        "scene_instances": 1,
+        "bounds": [
+          [
+            -2.0277081960932666,
+            -0.010811764747064722,
+            -0.17644600653332188
+          ],
+          [
+            -1.8116825290668566,
+            0.43652035295947256,
+            0.1514706114641081
+          ]
+        ],
+        "extents": [
+          0.21602566702641002,
+          0.4473321177065373,
+          0.32791661799743
+        ],
+        "max_to_min_extent_ratio": 2.070735963295737
+      },
+      "materials": {
+        "count": 1,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "baseColorTexture"
+          }
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "extensions_required": [],
+        "texture_count": 3,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 1,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 2,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      },
+      "selection_reason": "Leather texture and moderate shape complexity; raw object is off center.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data."
+      ]
+    },
+    {
+      "uid": "04c6b0d6e35446d2a42d4033f4e286c9",
+      "object_id": "radio",
+      "name": "#3DST Old Radio",
+      "recommended": true,
+      "priority": 6,
+      "category": "electronics",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/04c6b0d6e35446d2a42d4033f4e286c9.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/04c6b0d6e35446d2a42d4033f4e286c9.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/04c6b0d6e35446d2a42d4033f4e286c9.glb",
+      "file_size_bytes": 2351444,
+      "sha256": "3f47b1f2772254ae83aeebab3bceb1e72a604a881a4f7cc73a2942218f9dec9b",
+      "viewer_url": "https://sketchfab.com/3d-models/04c6b0d6e35446d2a42d4033f4e286c9",
+      "author": "Victor",
+      "author_username": "vtsst",
+      "author_profile_url": "https://sketchfab.com/vtsst",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "123d",
+        "scan",
+        "3dscan"
+      ],
+      "categories": [
+        "electronics-gadgets"
+      ],
+      "geometry": {
+        "vertices": 25369,
+        "faces": 47442,
+        "scene_vertices": 25369,
+        "scene_faces": 47442,
+        "mesh_count": 3,
+        "scene_instances": 3,
+        "bounds": [
+          [
+            -9.932259559631348,
+            6.6897501945495605,
+            -4.371089935302734
+          ],
+          [
+            1.6087199449539185,
+            15.930899620056152,
+            3.2536499500274663
+          ]
+        ],
+        "extents": [
+          11.540979504585266,
+          9.241149425506592,
+          7.6247398853302
+        ],
+        "max_to_min_extent_ratio": 1.5136227173847345
+      },
+      "materials": {
+        "count": 2,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "baseColorTexture"
+          },
+          {
+            "material_index": 1,
+            "texture_index": 1,
+            "role": "baseColorTexture"
+          }
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "extensions_required": [],
+        "texture_count": 2,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/jpeg",
+            "format": "JPEG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 1,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/jpeg",
+            "format": "JPEG",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      },
+      "selection_reason": "Panel details and buttons; two textured opaque materials.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data."
+      ]
+    },
+    {
+      "uid": "c37d22acc31a41c5aa353f28a8494c1d",
+      "object_id": "lion",
+      "name": "Photogrammetry - Lion Statue",
+      "recommended": true,
+      "priority": 7,
+      "category": "sculpture",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/c37d22acc31a41c5aa353f28a8494c1d.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/c37d22acc31a41c5aa353f28a8494c1d.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/c37d22acc31a41c5aa353f28a8494c1d.glb",
+      "file_size_bytes": 1646636,
+      "sha256": "0f7f484dc0c9cb79c8c567dddc63874729080df77215aa885cabc55522c30579",
+      "viewer_url": "https://sketchfab.com/3d-models/c37d22acc31a41c5aa353f28a8494c1d",
+      "author": "Scott Roantree",
+      "author_username": "sroantree",
+      "author_profile_url": "https://sketchfab.com/sroantree",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "lion",
+        "statue",
+        "photogrammetry",
+        "displayland"
+      ],
+      "categories": [
+        "cultural-heritage-history"
+      ],
+      "geometry": {
+        "vertices": 26455,
+        "faces": 44271,
+        "scene_vertices": 26455,
+        "scene_faces": 44271,
+        "mesh_count": 1,
+        "scene_instances": 1,
+        "bounds": [
+          [
+            -1.4884735613424294,
+            -0.34435415953363,
+            -1.422089161771009
+          ],
+          [
+            2.1618974452918494,
+            0.8422645562777407,
+            1.3111623467081541
+          ]
+        ],
+        "extents": [
+          3.6503710066342787,
+          1.1866187158113708,
+          2.733251508479163
+        ],
+        "max_to_min_extent_ratio": 3.0762796490516124
+      },
+      "materials": {
+        "count": 1,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "KHR_materials_pbrSpecularGlossiness.diffuseTexture"
+          }
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "extensions_required": [
+          "KHR_materials_pbrSpecularGlossiness"
+        ],
+        "texture_count": 1,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/jpeg",
+            "format": "JPEG",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      },
+      "selection_reason": "Photogrammetry sculpture; tests irregular geometry and legacy spec/gloss material.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data.",
+        "Support KHR_materials_pbrSpecularGlossiness diffuseTexture when reading colors."
+      ]
+    },
+    {
+      "uid": "034e31bc4b8a471699c3056b671b97b3",
+      "object_id": "cart",
+      "name": "Wooden cart",
+      "recommended": true,
+      "priority": 8,
+      "category": "vehicle",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/034e31bc4b8a471699c3056b671b97b3.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/034e31bc4b8a471699c3056b671b97b3.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/034e31bc4b8a471699c3056b671b97b3.glb",
+      "file_size_bytes": 581132,
+      "sha256": "508976b223c1d6145f00156ac6eaafb9aed62d389e22adcf878351db71bb7ad7",
+      "viewer_url": "https://sketchfab.com/3d-models/034e31bc4b8a471699c3056b671b97b3",
+      "author": "NikolZerg",
+      "author_username": "nikolzerg",
+      "author_profile_url": "https://sketchfab.com/nikolzerg",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "wooden",
+        "lowpoly"
+      ],
+      "categories": [
+        "furniture-home"
+      ],
+      "geometry": {
+        "vertices": 5663,
+        "faces": 2780,
+        "scene_vertices": 5663,
+        "scene_faces": 2780,
+        "mesh_count": 1,
+        "scene_instances": 1,
+        "bounds": [
+          [
+            -2.941767454147339,
+            0.00023068636947931598,
+            -1.1140748690621396
+          ],
+          [
+            1.2362616062164307,
+            1.5370043394601465,
+            1.1095744467012685
+          ]
+        ],
+        "extents": [
+          4.1780290603637695,
+          1.536773653090667,
+          2.2236493157634083
+        ],
+        "max_to_min_extent_ratio": 2.718701646115007
+      },
+      "materials": {
+        "count": 1,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "baseColorTexture"
+          }
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "extensions_required": [],
+        "texture_count": 1,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/jpeg",
+            "format": "JPEG",
+            "width": 1024,
+            "height": 512
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      },
+      "selection_reason": "Open structure and thin wheels; tests self occlusion.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data."
+      ]
+    },
+    {
+      "uid": "0451dc8905f140639e0d081e78ea6b86",
+      "object_id": "chest",
+      "name": "Chest",
+      "recommended": true,
+      "priority": 9,
+      "category": "furniture",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/0451dc8905f140639e0d081e78ea6b86.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/0451dc8905f140639e0d081e78ea6b86.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/0451dc8905f140639e0d081e78ea6b86.glb",
+      "file_size_bytes": 3594248,
+      "sha256": "436312edbbc38f74e31c147250440edd7a80880b29483fd5aacf52e3b250806b",
+      "viewer_url": "https://sketchfab.com/3d-models/0451dc8905f140639e0d081e78ea6b86",
+      "author": "Tidus",
+      "author_username": "JuegosChafas",
+      "author_profile_url": "https://sketchfab.com/JuegosChafas",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "videogames",
+        "chest",
+        "tidus",
+        "asset",
+        "gold",
+        "pirates"
+      ],
+      "categories": [
+        "furniture-home",
+        "weapons-military"
+      ],
+      "geometry": {
+        "vertices": 6615,
+        "faces": 8932,
+        "scene_vertices": 6615,
+        "scene_faces": 8932,
+        "mesh_count": 55,
+        "scene_instances": 55,
+        "bounds": [
+          [
+            -1.000000065064471,
+            0.003342569191465916,
+            -0.6874253749847412
+          ],
+          [
+            1.0000000158084523,
+            1.3975932836575133,
+            0.7766344596473647
+          ]
+        ],
+        "extents": [
+          2.0000000808729235,
+          1.3942507144660474,
+          1.4640598346321059
+        ],
+        "max_to_min_extent_ratio": 1.434462295856781
+      },
+      "materials": {
+        "count": 2,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "baseColorTexture"
+          },
+          {
+            "material_index": 1,
+            "texture_index": 3,
+            "role": "baseColorTexture"
+          }
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "extensions_required": [],
+        "texture_count": 6,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/jpeg",
+            "format": "JPEG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 1,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 2,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/jpeg",
+            "format": "JPEG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 3,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/jpeg",
+            "format": "JPEG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 4,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 5,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/jpeg",
+            "format": "JPEG",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      },
+      "selection_reason": "Compact box with hardware; two textured opaque materials.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data."
+      ]
+    },
+    {
+      "uid": "0563c6e7a4ac4f02b6914f4f6e32b7fa",
+      "object_id": "truck",
+      "name": "Dirty Old Truck",
+      "recommended": true,
+      "priority": 10,
+      "category": "vehicle",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/0563c6e7a4ac4f02b6914f4f6e32b7fa.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/0563c6e7a4ac4f02b6914f4f6e32b7fa.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/0563c6e7a4ac4f02b6914f4f6e32b7fa.glb",
+      "file_size_bytes": 2617520,
+      "sha256": "70afde45bcd4dca9a41127bdaff5de1bdcc8f3a4a2daf898deab768d4ecef26c",
+      "viewer_url": "https://sketchfab.com/3d-models/0563c6e7a4ac4f02b6914f4f6e32b7fa",
+      "author": "Jace B.",
+      "author_username": "snomss",
+      "author_profile_url": "https://sketchfab.com/snomss",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "automobile",
+        "truck",
+        "vintage",
+        "dirty",
+        "old",
+        "vehicle",
+        "car"
+      ],
+      "categories": [
+        "cars-vehicles"
+      ],
+      "geometry": {
+        "vertices": 4231,
+        "faces": 4990,
+        "scene_vertices": 4231,
+        "scene_faces": 4990,
+        "mesh_count": 5,
+        "scene_instances": 5,
+        "bounds": [
+          [
+            -64.59174340900609,
+            -9.536743181826068e-06,
+            -128.39675903320312
+          ],
+          [
+            64.59174118310693,
+            90.03186035156251,
+            140.7705914022481
+          ]
+        ],
+        "extents": [
+          129.18348459211302,
+          90.03186988830569,
+          269.1673504354512
+        ],
+        "max_to_min_extent_ratio": 2.9896896595548057
+      },
+      "materials": {
+        "count": 1,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "baseColorTexture"
+          }
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "extensions_required": [],
+        "texture_count": 3,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 1,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 2,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": []
+      },
+      "selection_reason": "Paint/wear texture and angular vehicle shape; needs scale normalization.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data."
+      ]
+    },
+    {
+      "uid": "000074a334c541878360457c672b6c2e",
+      "object_id": "flip_flop",
+      "name": "Worn Flip Flop",
+      "recommended": false,
+      "priority": 11,
+      "category": "footwear",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/000074a334c541878360457c672b6c2e.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/000074a334c541878360457c672b6c2e.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/000074a334c541878360457c672b6c2e.glb",
+      "file_size_bytes": 3531612,
+      "sha256": "9d6f73ffdcbe1d81445643649b43a68bd7b980a974c2897208b84dbc94a471f1",
+      "viewer_url": "https://sketchfab.com/3d-models/000074a334c541878360457c672b6c2e",
+      "author": "inciprocal",
+      "author_username": "inciprocal.com",
+      "author_profile_url": "https://sketchfab.com/inciprocal.com",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "soft",
+        "gray",
+        "shoes",
+        "foam",
+        "realistic",
+        "beach",
+        "scanned",
+        "rubber",
+        "yoga",
+        "flipflop",
+        "photometry",
+        "flipflops",
+        "pbr-texturing",
+        "pbr-materials",
+        "inciprocal"
+      ],
+      "categories": [
+        "fashion-style",
+        "sports-fitness"
+      ],
+      "geometry": {
+        "vertices": 8454,
+        "faces": 14884,
+        "scene_vertices": 8454,
+        "scene_faces": 14884,
+        "mesh_count": 1,
+        "scene_instances": 1,
+        "bounds": [
+          [
+            -0.1471135075898229,
+            4.199999966659463e-05,
+            -0.07462882068352165
+          ],
+          [
+            0.11318509623528286,
+            0.07562699913978577,
+            0.12869403308142363
+          ]
+        ],
+        "extents": [
+          0.2602986038251057,
+          0.07558499914011917,
+          0.2033228537649453
+        ],
+        "max_to_min_extent_ratio": 3.4437865553529377
+      },
+      "materials": {
+        "count": 1,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "KHR_materials_pbrSpecularGlossiness.diffuseTexture"
+          }
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "extensions_required": [
+          "KHR_materials_pbrSpecularGlossiness"
+        ],
+        "texture_count": 4,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/jpeg",
+            "format": "JPEG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 1,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 2,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/jpeg",
+            "format": "JPEG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 3,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      },
+      "selection_reason": "Flat object and strap; alternate for thin geometry challenge.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data.",
+        "Support KHR_materials_pbrSpecularGlossiness diffuseTexture when reading colors."
+      ]
+    },
+    {
+      "uid": "0222b2e45aa64d2198af548ea107a64a",
+      "object_id": "bread",
+      "name": "Photo Scanned Bread #04",
+      "recommended": false,
+      "priority": 12,
+      "category": "food",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/0222b2e45aa64d2198af548ea107a64a.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/0222b2e45aa64d2198af548ea107a64a.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/0222b2e45aa64d2198af548ea107a64a.glb",
+      "file_size_bytes": 5172060,
+      "sha256": "547377364abaa93b579018ba76346224bfe34008f0f277b3f69b120ede1d1855",
+      "viewer_url": "https://sketchfab.com/3d-models/0222b2e45aa64d2198af548ea107a64a",
+      "author": "Latecnocreativa Studios",
+      "author_username": "latecnocreativa",
+      "author_profile_url": "https://sketchfab.com/latecnocreativa",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "bread"
+      ],
+      "categories": [
+        "food-drink"
+      ],
+      "geometry": {
+        "vertices": 52378,
+        "faces": 103206,
+        "scene_vertices": 52378,
+        "scene_faces": 103206,
+        "mesh_count": 1,
+        "scene_instances": 1,
+        "bounds": [
+          [
+            -4.254186976996266,
+            -3.2045354136315147,
+            -12.362480886750927
+          ],
+          [
+            4.861324722076885,
+            -1.8974782770624135,
+            -10.365883843535693
+          ]
+        ],
+        "extents": [
+          9.115511699073151,
+          1.3070571365691013,
+          1.9965970432152336
+        ],
+        "max_to_min_extent_ratio": 6.974072857289536
+      },
+      "materials": {
+        "count": 1,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "baseColorTexture"
+          }
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "extensions_required": [],
+        "texture_count": 2,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/jpeg",
+            "format": "JPEG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 1,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      },
+      "selection_reason": "Rich scanned food texture but elongated aspect ratio and more triangles.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data."
+      ]
+    },
+    {
+      "uid": "04c4eebf6c894efc9b627fa453c4d917",
+      "object_id": "baguette",
+      "name": "French Baguette",
+      "recommended": false,
+      "priority": 13,
+      "category": "food",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/04c4eebf6c894efc9b627fa453c4d917.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/04c4eebf6c894efc9b627fa453c4d917.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/04c4eebf6c894efc9b627fa453c4d917.glb",
+      "file_size_bytes": 768888,
+      "sha256": "646148096a01a205100db23dc09078ce26bbdffb31a6b89cb600f188737473ab",
+      "viewer_url": "https://sketchfab.com/3d-models/04c4eebf6c894efc9b627fa453c4d917",
+      "author": "Tremeer",
+      "author_username": "Tremeer",
+      "author_profile_url": "https://sketchfab.com/Tremeer",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "bread",
+        "baguette",
+        "low-poly",
+        "frenchbread",
+        "frenchbaguette"
+      ],
+      "categories": [
+        "food-drink"
+      ],
+      "geometry": {
+        "vertices": 1984,
+        "faces": 960,
+        "scene_vertices": 1984,
+        "scene_faces": 960,
+        "mesh_count": 1,
+        "scene_instances": 1,
+        "bounds": [
+          [
+            -1.04400903680735,
+            -0.585677362702145,
+            -4.35595360888418
+          ],
+          [
+            1.0440094724019424,
+            0.585677362702771,
+            4.3559520510743175
+          ]
+        ],
+        "extents": [
+          2.0880185092092924,
+          1.1713547254049161,
+          8.711905659958497
+        ],
+        "max_to_min_extent_ratio": 7.437461488830335
+      },
+      "materials": {
+        "count": 1,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "baseColorTexture"
+          }
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "extensions_required": [],
+        "texture_count": 1,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/jpeg",
+            "format": "JPEG",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": []
+      },
+      "selection_reason": "Small asset with rich crust texture; elongated framing challenge.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data."
+      ]
+    },
+    {
+      "uid": "ef90ce3a7d2a47e99eeef1e94b789e68",
+      "object_id": "chair",
+      "name": "Old Chair",
+      "recommended": false,
+      "priority": 14,
+      "category": "furniture",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/ef90ce3a7d2a47e99eeef1e94b789e68.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/ef90ce3a7d2a47e99eeef1e94b789e68.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/ef90ce3a7d2a47e99eeef1e94b789e68.glb",
+      "file_size_bytes": 3053860,
+      "sha256": "81fdcd7fa19670ac2a8dc005a8dca943173e643c09cd8133b8eb74398e7ec613",
+      "viewer_url": "https://sketchfab.com/3d-models/ef90ce3a7d2a47e99eeef1e94b789e68",
+      "author": "Yousof Hajizeinali",
+      "author_username": "Yousof_hz",
+      "author_profile_url": "https://sketchfab.com/Yousof_hz",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "chair-old",
+        "chair-furniture",
+        "chairmodel",
+        "maya",
+        "unity",
+        "unity3d",
+        "3d",
+        "blender",
+        "chair",
+        "model",
+        "house",
+        "simple",
+        "modelling"
+      ],
+      "categories": [
+        "architecture",
+        "furniture-home"
+      ],
+      "geometry": {
+        "vertices": 983,
+        "faces": 1292,
+        "scene_vertices": 983,
+        "scene_faces": 1292,
+        "mesh_count": 1,
+        "scene_instances": 1,
+        "bounds": [
+          [
+            -0.2756717110852791,
+            -0.49189140979886864,
+            -0.2646183740710152
+          ],
+          [
+            0.2756717110852791,
+            0.4918913916590616,
+            0.26461830881894643
+          ]
+        ],
+        "extents": [
+          0.5513434221705582,
+          0.9837828014579302,
+          0.5292366828899616
+        ],
+        "max_to_min_extent_ratio": 1.8588711502117803
+      },
+      "materials": {
+        "count": 1,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "baseColorTexture"
+          }
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "extensions_required": [],
+        "texture_count": 3,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 1,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 2,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      },
+      "selection_reason": "Low-poly textured chair; thin legs and open back test coverage.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data."
+      ]
+    },
+    {
+      "uid": "b1c794f1a66d425191bef989cde7095f",
+      "object_id": "ceramic",
+      "name": "Ceramic Sculpture",
+      "recommended": false,
+      "priority": 15,
+      "category": "sculpture",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/b1c794f1a66d425191bef989cde7095f.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/b1c794f1a66d425191bef989cde7095f.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/b1c794f1a66d425191bef989cde7095f.glb",
+      "file_size_bytes": 6680548,
+      "sha256": "2e0522ebee86f60bc1a46418baea2b6eed44d2700c6c0fd64bde84e17e13053f",
+      "viewer_url": "https://sketchfab.com/3d-models/b1c794f1a66d425191bef989cde7095f",
+      "author": "Berr",
+      "author_username": "Berr",
+      "author_profile_url": "https://sketchfab.com/Berr",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "ceramic",
+        "photogrammerty",
+        "photoscan",
+        "abstract",
+        "sculpture"
+      ],
+      "categories": [
+        "art-abstract"
+      ],
+      "geometry": {
+        "vertices": 98461,
+        "faces": 124911,
+        "scene_vertices": 98461,
+        "scene_faces": 124911,
+        "mesh_count": 2,
+        "scene_instances": 2,
+        "bounds": [
+          [
+            -0.6886810064315796,
+            -0.6571940183639525,
+            -1.3816280364990225
+          ],
+          [
+            1.090939998626709,
+            5.62803316116333,
+            1.3124289512634288
+          ]
+        ],
+        "extents": [
+          1.7796210050582886,
+          6.285227179527283,
+          2.694056987762451
+        ],
+        "max_to_min_extent_ratio": 3.5317784863532897
+      },
+      "materials": {
+        "count": 1,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "baseColorTexture"
+          }
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "extensions_required": [],
+        "texture_count": 1,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      },
+      "selection_reason": "Tall scanned sculpture; larger mesh and less compact.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data."
+      ]
+    },
+    {
+      "uid": "0462dc66153b4a2e8968cf8d121a95f5",
+      "object_id": "mask",
+      "name": "Mask - Oie Holm",
+      "recommended": false,
+      "priority": 16,
+      "category": "artifact",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/0462dc66153b4a2e8968cf8d121a95f5.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/0462dc66153b4a2e8968cf8d121a95f5.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/0462dc66153b4a2e8968cf8d121a95f5.glb",
+      "file_size_bytes": 769268,
+      "sha256": "3af5532bd1728eb0c005754b282da96d691858499e0ca97fff1800064e834ed3",
+      "viewer_url": "https://sketchfab.com/3d-models/0462dc66153b4a2e8968cf8d121a95f5",
+      "author": "jussi2",
+      "author_username": "jussi2",
+      "author_profile_url": "https://sketchfab.com/jussi2",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "keudatartu"
+      ],
+      "categories": [],
+      "geometry": {
+        "vertices": 5951,
+        "faces": 9428,
+        "scene_vertices": 5951,
+        "scene_faces": 9428,
+        "mesh_count": 1,
+        "scene_instances": 1,
+        "bounds": [
+          [
+            -0.5318638456701897,
+            -2.233051704727133e-16,
+            -0.534997510803444
+          ],
+          [
+            0.5330436147079277,
+            1.8473772074506911,
+            0.5318782747885861
+          ]
+        ],
+        "extents": [
+          1.0649074603781175,
+          1.8473772074506913,
+          1.0668757855920301
+        ],
+        "max_to_min_extent_ratio": 1.7347772235483652
+      },
+      "materials": {
+        "count": 1,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "baseColorTexture"
+          }
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "extensions_required": [],
+        "texture_count": 1,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/jpeg",
+            "format": "JPEG",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      },
+      "selection_reason": "Textured mask; back and cavities may have fewer point features.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data."
+      ]
+    },
+    {
+      "uid": "d1fe37e659c84bacbbfeb54ab2fbbd6e",
+      "object_id": "jug",
+      "name": "Jug",
+      "recommended": false,
+      "priority": 17,
+      "category": "container",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/d1fe37e659c84bacbbfeb54ab2fbbd6e.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/d1fe37e659c84bacbbfeb54ab2fbbd6e.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/d1fe37e659c84bacbbfeb54ab2fbbd6e.glb",
+      "file_size_bytes": 4773916,
+      "sha256": "f04a2890238f3ba40dcf13cd78fc97c376de0cb14cfa46fbc6504866c77fd20c",
+      "viewer_url": "https://sketchfab.com/3d-models/d1fe37e659c84bacbbfeb54ab2fbbd6e",
+      "author": "Museum für Kunst und Gewerbe Hamburg",
+      "author_username": "mkghamburg",
+      "author_profile_url": "https://sketchfab.com/mkghamburg",
+      "license_code": "cc0",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "pottery",
+        "museum",
+        "iran",
+        "archaeology",
+        "mkg"
+      ],
+      "categories": [
+        "cultural-heritage-history",
+        "furniture-home"
+      ],
+      "geometry": {
+        "vertices": 41727,
+        "faces": 80000,
+        "scene_vertices": 41727,
+        "scene_faces": 80000,
+        "mesh_count": 1,
+        "scene_instances": 1,
+        "bounds": [
+          [
+            -0.9243630170822144,
+            0.0031592683684612253,
+            -1.0071841316092598
+          ],
+          [
+            0.951306939125061,
+            2.358236675597001,
+            0.9555308866645096
+          ]
+        ],
+        "extents": [
+          1.8756699562072754,
+          2.3550774072285394,
+          1.9627150182737694
+        ],
+        "max_to_min_extent_ratio": 1.255592648074748
+      },
+      "materials": {
+        "count": 1,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "baseColorTexture"
+          }
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "extensions_required": [],
+        "texture_count": 2,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/jpeg",
+            "format": "JPEG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 1,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      },
+      "selection_reason": "CC0 textured jug; rounded shape and handle.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data."
+      ]
+    },
+    {
+      "uid": "278532499c9048b688ba6840e19e76f9",
+      "object_id": "robot",
+      "name": "Mini Robot",
+      "recommended": false,
+      "priority": 18,
+      "category": "character",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/278532499c9048b688ba6840e19e76f9.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/278532499c9048b688ba6840e19e76f9.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/278532499c9048b688ba6840e19e76f9.glb",
+      "file_size_bytes": 4074276,
+      "sha256": "a06997d4c5715ce6ba726cb620876e363b4fe724a3dff51a1595bbc212f857f2",
+      "viewer_url": "https://sketchfab.com/3d-models/278532499c9048b688ba6840e19e76f9",
+      "author": "efforya",
+      "author_username": "efforya",
+      "author_profile_url": "https://sketchfab.com/efforya",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "gamereadymodel",
+        "gamereadyasset",
+        "robot"
+      ],
+      "categories": [
+        "electronics-gadgets"
+      ],
+      "geometry": {
+        "vertices": 4276,
+        "faces": 3968,
+        "scene_vertices": 4276,
+        "scene_faces": 3968,
+        "mesh_count": 1,
+        "scene_instances": 1,
+        "bounds": [
+          [
+            0.4053040146827698,
+            -0.645563006401062,
+            -0.3984340131282806
+          ],
+          [
+            1.6599969863891602,
+            0.6792169809341431,
+            1.1446000337600708
+          ]
+        ],
+        "extents": [
+          1.2546929717063904,
+          1.324779987335205,
+          1.5430340468883514
+        ],
+        "max_to_min_extent_ratio": 1.2298100664338745
+      },
+      "materials": {
+        "count": 1,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "baseColorTexture"
+          }
+        ],
+        "alpha_modes": [
+          "OPAQUE"
+        ],
+        "extensions_required": [],
+        "texture_count": 4,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 1,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 2,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 3,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      },
+      "selection_reason": "Compact textured robot with varied geometry.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data."
+      ]
+    },
+    {
+      "uid": "0000ecca9a234cae994be239f6fec552",
+      "object_id": "speaker",
+      "name": "SM Yamaha MSP3",
+      "recommended": false,
+      "priority": 19,
+      "category": "electronics",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/0000ecca9a234cae994be239f6fec552.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/0000ecca9a234cae994be239f6fec552.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/0000ecca9a234cae994be239f6fec552.glb",
+      "file_size_bytes": 1948336,
+      "sha256": "4b64774b755a8e6fa614c2b2d58c0b7dc7713ee47770cc86d98f616b667e86d1",
+      "viewer_url": "https://sketchfab.com/3d-models/0000ecca9a234cae994be239f6fec552",
+      "author": "blakearts",
+      "author_username": "syntheticorch",
+      "author_profile_url": "https://sketchfab.com/syntheticorch",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "speaker",
+        "monitor",
+        "audio",
+        "hardware",
+        "technology"
+      ],
+      "categories": [
+        "electronics-gadgets",
+        "music"
+      ],
+      "geometry": {
+        "vertices": 7013,
+        "faces": 10402,
+        "scene_vertices": 7013,
+        "scene_faces": 10402,
+        "mesh_count": 9,
+        "scene_instances": 9,
+        "bounds": [
+          [
+            0.2236707655670278,
+            -22.499034061431775,
+            -0.08576961325624455
+          ],
+          [
+            0.3636707958163844,
+            -22.274034085534403,
+            0.07685790366996541
+          ]
+        ],
+        "extents": [
+          0.1400000302493566,
+          0.2249999758973722,
+          0.16262751692620997
+        ],
+        "max_to_min_extent_ratio": 1.6071423377310752
+      },
+      "materials": {
+        "count": 9,
+        "base_color_textures": [
+          {
+            "material_index": 1,
+            "texture_index": 0,
+            "role": "baseColorTexture"
+          },
+          {
+            "material_index": 2,
+            "texture_index": 1,
+            "role": "baseColorTexture"
+          },
+          {
+            "material_index": 3,
+            "texture_index": 4,
+            "role": "baseColorTexture"
+          },
+          {
+            "material_index": 6,
+            "texture_index": 6,
+            "role": "baseColorTexture"
+          },
+          {
+            "material_index": 7,
+            "texture_index": 9,
+            "role": "baseColorTexture"
+          },
+          {
+            "material_index": 8,
+            "texture_index": 11,
+            "role": "baseColorTexture"
+          }
+        ],
+        "alpha_modes": [
+          "BLEND",
+          "MASK",
+          "OPAQUE"
+        ],
+        "extensions_required": [],
+        "texture_count": 13,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 64,
+            "height": 64
+          },
+          {
+            "index": 1,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "index": 2,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "index": 3,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "index": 4,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 512,
+            "height": 128
+          },
+          {
+            "index": 5,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 512,
+            "height": 128
+          },
+          {
+            "index": 6,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 7,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 8,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 9,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 256,
+            "height": 256
+          },
+          {
+            "index": 10,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 256,
+            "height": 256
+          },
+          {
+            "index": 11,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "index": 12,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 512,
+            "height": 512
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": []
+      },
+      "selection_reason": "Small textured speaker; some materials use BLEND/MASK, inspect alpha handling.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data."
+      ]
+    },
+    {
+      "uid": "003199cc6ff2410cb2d8e6f8a9cbb163",
+      "object_id": "hydrant",
+      "name": "01 Portugal Fire Hydrant",
+      "recommended": false,
+      "priority": 20,
+      "category": "street_furniture",
+      "source_shard": "000-000",
+      "source_path": "/data/260010041/class_homework/3dv/version2/results/000-000_to_000-004/cleaned/glbs/000-000/003199cc6ff2410cb2d8e6f8a9cbb163.glb",
+      "source_relative_path": "version2/results/000-000_to_000-004/cleaned/glbs/000-000/003199cc6ff2410cb2d8e6f8a9cbb163.glb",
+      "strict_cleaned_path": "/data/260010041/class_homework/3dv/cleaned/glbs/000-000/003199cc6ff2410cb2d8e6f8a9cbb163.glb",
+      "file_size_bytes": 4813492,
+      "sha256": "b9d0239dfe7bf35707338204ab64c87633286656e4c25c775be8d468c448e69a",
+      "viewer_url": "https://sketchfab.com/3d-models/003199cc6ff2410cb2d8e6f8a9cbb163",
+      "author": "spaceexpert",
+      "author_username": "spaceexpert",
+      "author_profile_url": "https://sketchfab.com/spaceexpert",
+      "license_code": "by",
+      "license_note": "License code copied from local Assignment 1 metadata; license version is not recorded.",
+      "tags": [
+        "portugal",
+        "urban",
+        "equipment",
+        "infrastructure",
+        "fire",
+        "water",
+        "hydrant",
+        "fire-fighting",
+        "pbr-shader",
+        "game",
+        "city",
+        "industrial"
+      ],
+      "categories": [
+        "architecture",
+        "places-travel"
+      ],
+      "geometry": {
+        "vertices": 4474,
+        "faces": 6404,
+        "scene_vertices": 4474,
+        "scene_faces": 6404,
+        "mesh_count": 3,
+        "scene_instances": 3,
+        "bounds": [
+          [
+            -0.4513135510983943,
+            0.0055026428975577515,
+            -0.6013228706586183
+          ],
+          [
+            0.4513135510983943,
+            1.0055831998931062,
+            0.3012799135911287
+          ]
+        ],
+        "extents": [
+          0.9026271021967887,
+          1.0000805569955484,
+          0.902602784249747
+        ],
+        "max_to_min_extent_ratio": 1.1079963129371753
+      },
+      "materials": {
+        "count": 2,
+        "base_color_textures": [
+          {
+            "material_index": 0,
+            "texture_index": 0,
+            "role": "baseColorTexture"
+          },
+          {
+            "material_index": 1,
+            "texture_index": 3,
+            "role": "baseColorTexture"
+          }
+        ],
+        "alpha_modes": [
+          "BLEND",
+          "OPAQUE"
+        ],
+        "extensions_required": [],
+        "texture_count": 4,
+        "textures": [
+          {
+            "index": 0,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/jpeg",
+            "format": "JPEG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 1,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 2,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "index": 3,
+            "status": "readable",
+            "source": "embedded",
+            "mime_type": "image/png",
+            "format": "PNG",
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "cleaning": {
+        "v2_status": "kept",
+        "strict_status": "kept",
+        "strict_cleaned_intersection": true,
+        "quality_flags": [],
+        "warnings": [
+          "historical_metadata_size_differs"
+        ]
+      },
+      "selection_reason": "Textured hydrant; one BLEND material, inspect alpha handling.",
+      "rendering_notes": [
+        "Normalize by transformed scene bounds, preserving aspect ratio.",
+        "Render to new files; original GLB is read only and may share a hard link with raw data."
+      ]
+    }
+  ]
+}

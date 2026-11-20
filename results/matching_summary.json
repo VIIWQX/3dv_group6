@@ -1,0 +1,122 @@
+[
+  {
+    "object_id": "camera",
+    "uid": "03b0ac7d99c44197a09640179f360f3c",
+    "keypoints_total": 20586,
+    "ratio_matches_total": 19758,
+    "ransac_inliers_total": 17448,
+    "pairs_with_8_inliers": 285,
+    "triangulated_observations": 17374,
+    "sparse_points": 6961,
+    "median_estimated_rotation_error_degrees": 4.275507624172866,
+    "seconds": 8.621929168701172
+  },
+  {
+    "object_id": "barrel",
+    "uid": "624f8d104cee405092161fc7447c78f1",
+    "keypoints_total": 15830,
+    "ratio_matches_total": 13299,
+    "ransac_inliers_total": 10777,
+    "pairs_with_8_inliers": 286,
+    "triangulated_observations": 10551,
+    "sparse_points": 4117,
+    "median_estimated_rotation_error_degrees": 4.874455635811031,
+    "seconds": 10.19945478439331
+  },
+  {
+    "object_id": "rock",
+    "uid": "3189bb396f8b4847afd3cb821dc4b919",
+    "keypoints_total": 44022,
+    "ratio_matches_total": 41900,
+    "ransac_inliers_total": 40013,
+    "pairs_with_8_inliers": 288,
+    "triangulated_observations": 40001,
+    "sparse_points": 13172,
+    "median_estimated_rotation_error_degrees": 3.641977895169359,
+    "seconds": 11.25027871131897
+  },
+  {
+    "object_id": "telephone",
+    "uid": "03af8be8df5946229b9bc30b6dcb2c54",
+    "keypoints_total": 5929,
+    "ratio_matches_total": 4191,
+    "ransac_inliers_total": 3059,
+    "pairs_with_8_inliers": 196,
+    "triangulated_observations": 2660,
+    "sparse_points": 1462,
+    "median_estimated_rotation_error_degrees": 22.930364511909772,
+    "seconds": 7.392858266830444
+  },
+  {
+    "object_id": "boots",
+    "uid": "01e35903910841fdb2f3c4dc41ff8b74",
+    "keypoints_total": 4259,
+    "ratio_matches_total": 3943,
+    "ransac_inliers_total": 2828,
+    "pairs_with_8_inliers": 213,
+    "triangulated_observations": 2225,
+    "sparse_points": 1454,
+    "median_estimated_rotation_error_degrees": 25.893166937042952,
+    "seconds": 8.21356201171875
+  },
+  {
+    "object_id": "radio",
+    "uid": "04c6b0d6e35446d2a42d4033f4e286c9",
+    "keypoints_total": 18449,
+    "ratio_matches_total": 16148,
+    "ransac_inliers_total": 13574,
+    "pairs_with_8_inliers": 277,
+    "triangulated_observations": 13400,
+    "sparse_points": 6793,
+    "median_estimated_rotation_error_degrees": 3.951642474526335,
+    "seconds": 8.789626359939575
+  },
+  {
+    "object_id": "lion",
+    "uid": "c37d22acc31a41c5aa353f28a8494c1d",
+    "keypoints_total": 15407,
+    "ratio_matches_total": 15045,
+    "ransac_inliers_total": 13416,
+    "pairs_with_8_inliers": 258,
+    "triangulated_observations": 13285,
+    "sparse_points": 6216,
+    "median_estimated_rotation_error_degrees": 9.530546829230342,
+    "seconds": 8.77634882926941
+  },
+  {
+    "object_id": "cart",
+    "uid": "034e31bc4b8a471699c3056b671b97b3",
+    "keypoints_total": 14527,
+    "ratio_matches_total": 8379,
+    "ransac_inliers_total": 6520,
+    "pairs_with_8_inliers": 248,
+    "triangulated_observations": 5787,
+    "sparse_points": 3853,
+    "median_estimated_rotation_error_degrees": 23.116852957432876,
+    "seconds": 32.68451690673828
+  },
+  {
+    "object_id": "chest",
+    "uid": "0451dc8905f140639e0d081e78ea6b86",
+    "keypoints_total": 10637,
+    "ratio_matches_total": 9369,
+    "ransac_inliers_total": 5972,
+    "pairs_with_8_inliers": 281,
+    "triangulated_observations": 4823,
+    "sparse_points": 3301,
+    "median_estimated_rotation_error_degrees": 29.024995868909635,
+    "seconds": 14.525708675384521
+  },
+  {
+    "object_id": "truck",
+    "uid": "0563c6e7a4ac4f02b6914f4f6e32b7fa",
+    "keypoints_total": 9050,
+    "ratio_matches_total": 7095,
+    "ransac_inliers_total": 5520,
+    "pairs_with_8_inliers": 263,
+    "triangulated_observations": 4889,
+    "sparse_points": 3208,
+    "median_estimated_rotation_error_degrees": 25.786901603111822,
+    "seconds": 14.097176313400269
+  }
+]

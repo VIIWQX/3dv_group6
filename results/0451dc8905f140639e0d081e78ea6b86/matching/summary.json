@@ -1,0 +1,30 @@
+{
+  "object_uid": "0451dc8905f140639e0d081e78ea6b86",
+  "method": "OpenCV SIFT + Lowe ratio + essential-matrix RANSAC + calibrated-camera triangulation",
+  "pose_source": "Known rendering camera calibration; independent essential-matrix pose estimates are evaluated, not substituted",
+  "coordinate_convention": "Normalized +Z-up world coordinates, same as dataset transforms",
+  "image_size": 384,
+  "views": 72,
+  "view_stride": 1,
+  "pairs": 288,
+  "ratio_threshold": 0.75,
+  "ransac_threshold_px": 1.5,
+  "max_features": 4096,
+  "keypoints_total": 10637,
+  "keypoints_mean": 147.73611111111111,
+  "ratio_matches_total": 9369,
+  "ransac_inliers_total": 5972,
+  "pairs_with_8_inliers": 281,
+  "triangulated_observations": 4823,
+  "sparse_points": 3301,
+  "median_estimated_rotation_error_degrees": 29.024995868909635,
+  "triangulation_filters": {
+    "max_reprojection_error_px": 3.0,
+    "minimum_parallax_degrees": 1.0,
+    "positive_depth_both_views": true,
+    "max_absolute_world_coordinate": 2.0,
+    "deduplication_voxel_size": 0.005
+  },
+  "seconds": 14.525708675384521,
+  "seed": 20261105
+}

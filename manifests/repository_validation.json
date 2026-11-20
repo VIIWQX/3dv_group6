@@ -1,0 +1,93 @@
+{
+  "complete": true,
+  "group_number": 6,
+  "members": 5,
+  "repository": "https://github.com/VIIWQX/3dv_group6",
+  "objects": 10,
+  "feature_files": 720,
+  "matching_pairs": 2880,
+  "gif_files": 10,
+  "all_gifs_60_frames": true,
+  "objects_detail": [
+    {
+      "object": "camera",
+      "uid": "03b0ac7d99c44197a09640179f360f3c",
+      "feature_files": 72,
+      "matching_pairs": 288,
+      "gif_frames": 60,
+      "matching_hashes": "passed"
+    },
+    {
+      "object": "barrel",
+      "uid": "624f8d104cee405092161fc7447c78f1",
+      "feature_files": 72,
+      "matching_pairs": 288,
+      "gif_frames": 60,
+      "matching_hashes": "passed"
+    },
+    {
+      "object": "rock",
+      "uid": "3189bb396f8b4847afd3cb821dc4b919",
+      "feature_files": 72,
+      "matching_pairs": 288,
+      "gif_frames": 60,
+      "matching_hashes": "passed"
+    },
+    {
+      "object": "telephone",
+      "uid": "03af8be8df5946229b9bc30b6dcb2c54",
+      "feature_files": 72,
+      "matching_pairs": 288,
+      "gif_frames": 60,
+      "matching_hashes": "passed"
+    },
+    {
+      "object": "boots",
+      "uid": "01e35903910841fdb2f3c4dc41ff8b74",
+      "feature_files": 72,
+      "matching_pairs": 288,
+      "gif_frames": 60,
+      "matching_hashes": "passed"
+    },
+    {
+      "object": "radio",
+      "uid": "04c6b0d6e35446d2a42d4033f4e286c9",
+      "feature_files": 72,
+      "matching_pairs": 288,
+      "gif_frames": 60,
+      "matching_hashes": "passed"
+    },
+    {
+      "object": "lion",
+      "uid": "c37d22acc31a41c5aa353f28a8494c1d",
+      "feature_files": 72,
+      "matching_pairs": 288,
+      "gif_frames": 60,
+      "matching_hashes": "passed"
+    },
+    {
+      "object": "cart",
+      "uid": "034e31bc4b8a471699c3056b671b97b3",
+      "feature_files": 72,
+      "matching_pairs": 288,
+      "gif_frames": 60,
+      "matching_hashes": "passed"
+    },
+    {
+      "object": "chest",
+      "uid": "0451dc8905f140639e0d081e78ea6b86",
+      "feature_files": 72,
+      "matching_pairs": 288,
+      "gif_frames": 60,
+      "matching_hashes": "passed"
+    },
+    {
+      "object": "truck",
+      "uid": "0563c6e7a4ac4f02b6914f4f6e32b7fa",
+      "feature_files": 72,
+      "matching_pairs": 288,
+      "gif_frames": 60,
+      "matching_hashes": "passed"
+    }
+  ]
+}

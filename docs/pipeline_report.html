@@ -1,0 +1,776 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>Assignment 2 Pipeline Report</title><style>body{max-width:1100px;margin:40px auto;padding:0 24px;font-family:system-ui,"Noto Sans CJK SC",sans-serif;color:#1d3340;line-height:1.75}h1,h2,h3{line-height:1.4}table{border-collapse:collapse;width:100%;font-size:12px}td,th{border:1px solid #ced8dd;padding:7px;overflow-wrap:anywhere}th{background:#eaf1f3}img{max-width:100%}pre{background:#f1f4f6;padding:18px;overflow:auto}a{color:#147c94}@media print{body{margin:0}h2{break-after:avoid}img,tr{break-inside:avoid}}</style><body><h1>第二次作业：从清洗数据到 NeRF 三维重建与渲染</h1>
+<p>实验日期：2026-11-05；文档更新：2026-11-20。数据范围：第一次作业 Objaverse <code>000-000</code>；10个不同UID。交付内容：完整代码、提示词、10对象点匹配结果、NeRF新视角GIF、评价记录与本报告。</p>
+<p><strong>GitHub仓库：<a href="https://github.com/VIIWQX/3dv_group6">https://github.com/VIIWQX/3dv_group6</a></strong></p>
+<h2>1. 小组及分工</h2>
+<p>小组编号：<strong>Group 6（第6组）</strong>。小组按数据、图像与相机、匹配与几何、NeRF训练与渲染、评价与文档五个模块均衡分工，每人承担20%的工作量，并负责两个对象的结果复核。</p>
+<table>
+<thead>
+<tr>
+<th>姓名</th>
+<th>学号</th>
+<th>比例</th>
+<th>分工与贡献</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>李昱晔</td>
+<td>260010184</td>
+<td>20%</td>
+<td>000-000数据筛选、清洗证据核验、来源与许可证整理；相机与木桶对象复核</td>
+</tr>
+<tr>
+<td>李宇怀</td>
+<td>260010242</td>
+<td>20%</td>
+<td>多视角图像生成、相机坐标约定与数据划分；岩石与电话对象复核</td>
+</tr>
+<tr>
+<td>仵庆熹</td>
+<td>260010041</td>
+<td>20%</td>
+<td>SIFT特征、点匹配、几何核验与稀疏点云；长靴与收音机对象复核</td>
+</tr>
+<tr>
+<td>曾子荣</td>
+<td>260010171</td>
+<td>20%</td>
+<td>NeRF训练、模型检查点与新视角GIF；石狮与木推车对象复核</td>
+</tr>
+<tr>
+<td>刘景寒</td>
+<td>260010193</td>
+<td>20%</td>
+<td>消融实验、评价统计、文档及提交包整合；箱子与卡车对象复核</td>
+</tr>
+</tbody>
+</table>
+<p>任务规划、实现与核验所用提示词保存在 <a href="PROMPTS.md">PROMPTS.md</a>；各实验同时保存参数、随机种子、训练日志与逐视图指标，便于核对分析依据。</p>
+<h2>2. 问题定义与实验边界</h2>
+<p>第一次作业清洗产物是GLB三维资产，而非带外参的实拍照片。因此首先用清洗模型产生受控的多视角RGBA输入，再从这些二维图像优化全新的辐射场。原GLB只在图像生成环节读取；NeRF训练、测试、GIF渲染和学习密度导出均不访问原网格、深度或法线。最终GIF的60帧由已训练NeRF逐条光线体渲染，不能与原模型直接渲染动画混为一谈。</p>
+<p>主实验采用已知合成相机，以统一比较10个对象的重建能力；另独立运行COLMAP从训练RGB恢复相机，分析相机估计这一环节的实际误差。SIFT匹配/三角化结果是几何诊断，未直接用作主NeRF的深度或点云监督。基线不是“未知相机端到端全部成功”的宣称。透明度用于轮廓初始化、前景采样和损失，这是合成数据的额外条件。</p>
+<h2>3. 数据选择与可追溯性</h2>
+<p>选择范围固定为 <code>000-000</code>，取V2清洗kept与第一版严格kept的交集。候选需几何有效、实际纹理可读取、大小适中，随后预览并选择10种形状与材质。筛选有意侧重可渲染的有纹理物体，不代表该分片的随机样本；清洗合格也不保证摄影测量或NeRF一定容易。模型原字节只读，未改写与raw共享硬链接的源文件。</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>对象</th>
+<th>UID</th>
+<th>三角面</th>
+<th>作者</th>
+<th>许可代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Canon AE-1 Program 35mm Film Camera</td>
+<td>03b0ac7d99c44197a09640179f360f3c</td>
+<td>77532</td>
+<td>Marc Sawyer</td>
+<td>by</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Wooden Barrel</td>
+<td>624f8d104cee405092161fc7447c78f1</td>
+<td>3040</td>
+<td>jwkheir</td>
+<td>by</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Rock Stone 15 .::RAWscan::.</td>
+<td>3189bb396f8b4847afd3cb821dc4b919</td>
+<td>27278</td>
+<td>Andrea Spognetta (Spogna)</td>
+<td>by</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Antique World War II German Telephone</td>
+<td>03af8be8df5946229b9bc30b6dcb2c54</td>
+<td>34578</td>
+<td>Ray Ferric</td>
+<td>by</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Leather Boots</td>
+<td>01e35903910841fdb2f3c4dc41ff8b74</td>
+<td>16622</td>
+<td>Flenehens</td>
+<td>by</td>
+</tr>
+<tr>
+<td>6</td>
+<td>#3DST Old Radio</td>
+<td>04c6b0d6e35446d2a42d4033f4e286c9</td>
+<td>47442</td>
+<td>Victor</td>
+<td>by</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Photogrammetry - Lion Statue</td>
+<td>c37d22acc31a41c5aa353f28a8494c1d</td>
+<td>44271</td>
+<td>Scott Roantree</td>
+<td>by</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Wooden cart</td>
+<td>034e31bc4b8a471699c3056b671b97b3</td>
+<td>2780</td>
+<td>NikolZerg</td>
+<td>by</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Chest</td>
+<td>0451dc8905f140639e0d081e78ea6b86</td>
+<td>8932</td>
+<td>Tidus</td>
+<td>by</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Dirty Old Truck</td>
+<td>0563c6e7a4ac4f02b6914f4f6e32b7fa</td>
+<td>4990</td>
+<td>Jace B.</td>
+<td>by</td>
+</tr>
+</tbody>
+</table>
+<p>数据固定revision：<code>21e4e142159e2153706c23a3a02e55cec5591cea</code>。逐对象路径、SHA256、清洗状态、原作品/作者链接见 <a href="../manifests/selection.json">selection.json</a>、<a href="../manifests/provenance.json">provenance.json</a> 和 <a href="DATA_LICENSES.md">DATA_LICENSES.md</a>。本地metadata的许可代码为by，未记录具体CC版本；文档没有推断版本。</p>
+<p><img alt="多视角输入预览" src="input_preview.jpg" /></p>
+<h2>4. 完整流水线与实现</h2>
+<h3>4.1 场景加载、规范化与图像采集</h3>
+<p><code>render_dataset.py</code> 用trimesh加载完整场景图并应用实例变换，再将glTF的+Y向上坐标旋转为+Z向上。平移包围盒中心到原点，按最大边长缩放为1.6，保持长宽高比例。统一坐标使NeRF的固定[-1,1]³边界适用于所有对象；否则偏心或尺度过大的对象会落在学习体之外。</p>
+<p>图像由numba CPU软件光栅器生成：三角形z-buffer、透视正确的UV插值、双线性base-color纹理采样、顶点颜色与材质色因子，以及固定世界坐标的环境/双向漫反射光照。alpha小于0.35被裁剪。纹理最长边最多2048。该受控渲染器未实现完整metallic-roughness PBR、阴影、折射或真实相机噪声。</p>
+<p>相机通常半径3.0，箱子chest为3.5，针孔视场40°，输入384×384。72训练视图来自仰角0°、25°、50°各24张，方位间隔15°；12测试视图方位为7.5°+30°i，仰角12°/37°交替，均不与训练相机重复。GIF使用25°仰角、2°+6°i方位的60个相机，均与训练和测试相机不同。采用Blender/OpenGL相机到世界矩阵，+X向右、+Y向上、-Z为观察方向。PNG保留alpha。</p>
+<p>实际验收发现chest在半径3.0时28/72训练图和4/12测试图的前景触到底边。逐顶点投影估算，若需384像素图上8像素边距，相机半径至少3.43069；因此仅该对象改为3.5，并重跑图像、匹配、NeRF、SfM及几何导出。修复前的产物保留在本地排查目录，最终表只使用修复后数据。两次投影大小和测试图片不同，不将旧/新PSNR作严格消融差值。</p>
+<p>训练/测试统一缩放到256×256，相机fx、fy、cx、cy同步等比缩放。像素中心光线为 ((u+0.5-cx)/fx, -(v+0.5-cy)/fy, -1)，经c2w旋转并归一化。白背景合成采用rgb×alpha+(1-alpha)，避免透明区域的黑RGB污染训练。</p>
+<h3>4.2 点特征、匹配、几何核验与稀疏点</h3>
+<p><code>match_features.py</code> 在384像素图像上用alpha前景mask提取SIFT，最多4096特征；对同圈邻近方位及相邻仰角的共288对图像进行描述子2近邻匹配，Lowe比例阈值0.75，再用本质矩阵RANSAC核验，像素阈值1.5。独立恢复的相对旋转与已知相机相比，仅作诊断。</p>
+<p>已知相机三角化需要双视图正深度、视差至少1°、重投影误差不超过3像素、世界坐标绝对值不超过2；随后用0.005大小的空间格去重。每一幅图的关键点与描述子、每一对的匹配索引和内点mask均以NPZ保留，逐对CSV包含误差和视差；不仅提供几张示意图。</p>
+<p><code>run_sfm.py</code> 是独立未知外参分支：固定已知PINHOLE内参，用CPU COLMAP SIFT、穷举匹配、几何验证和增量SfM/束调整估计相机；不把已知外参传给mapper。结束后仅用一个全局Sim(3)将估计轨迹与合成相机对齐以评价位置/角度误差，不能用逐帧真值替换失败相机。最大连通模型覆盖率与多个互不对齐模型的合计覆盖率分开报告。</p>
+<h3>4.3 体素特征NeRF与可微体渲染</h3>
+<p><code>nerf.py</code> 实现DVGO风格的NeRF变体：一张可训练原始密度网格、一张8维特征网格及32→32→3的小型方向相关MLP。位置通过三线性插值查询特征；颜色由前三维特征的RGB logit与MLP残差相加后sigmoid得到，方向编码含原方向和π、2π正余弦。与原始NeRF全MLP参数化不同，仍优化连续辐射/密度函数并进行可微体积分。此实现借鉴论文思想，不是官方DVGO代码或完整性能复现。</p>
+<p>对每条光线先求与[-1,1]³的交段，等距离分层采128个点；训练在每个区间随机抖动，测试用中点。密度σ=softplus(raw)，每段alpha=1-exp(-σΔ)，权重w_i=alpha_i×exp(-Σ_{j&lt;i}σ_jΔ_j)。输出颜色C=Σw_i c_i+(1-Σw_i)，最后一项是白背景。无交段光线返回白色。</p>
+<p>仅从最多24个训练RGBA视图构造软visual-hull初始化：投影体素，使用一像素膨胀轮廓和95%视图一致性，初始化内部/外部原始密度为1/-7。颜色由训练图像投影平均初始化。它是可训练先验，不能视为从源几何提取的真实形状。alpha/visual hull不能确定不可见凹陷或物体内部。</p>
+<p>优化3000步，固定seed42。网格32³→64³→96³，在约35%和65%的步数细化；每批4096光线，其中65%来自前景、35%均匀采样。损失为RGB MSE + 0.1×alpha MSE + 1e-5×TV；TV每8步计算并乘8作稀疏更新。密度TV在实现中额外乘0.1。Adam网格初始学习率0.08、MLP为0.002，按0.1^(step/total)指数衰减；细化时重建优化器。</p>
+<h3>4.4 新视角渲染、评价和几何导出</h3>
+<p>固定训练步数后保存检查点，仅在独立的12张测试图上评价，没有测试像素梯度或按测试分数早停。PSNR按对象全部测试像素的总MSE计算；前景PSNR只统计真值alpha&gt;0.5的像素，避免白色背景让分数过于乐观；另给SSIM和预测alpha&gt;0.5的mask IoU。主表的跨对象均值是对象等权宏平均，不能与所有像素合并的PSNR混用。</p>
+<p>60帧GIF每帧256×256、80毫秒，约4.8秒循环。<code>export_geometry.py</code> 从学习后的密度网格作marching cubes，记录阈值、范围和过滤策略；PLY只是辐射场等值面诊断，没有真值Chamfer/法线准确性保证，不能将渲染PSNR直接解释为几何精度。</p>
+<h2>5. 10对象实际结果</h2>
+<table>
+<thead>
+<tr>
+<th>对象</th>
+<th>全图PSNR↑</th>
+<th>前景PSNR↑</th>
+<th>SSIM↑</th>
+<th>mask IoU↑</th>
+<th>训练秒数</th>
+<th>GIF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>camera</td>
+<td>28.47</td>
+<td>25.66</td>
+<td>0.9242</td>
+<td>0.9775</td>
+<td>16.74</td>
+<td><a href="../results/03b0ac7d99c44197a09640179f360f3c/orbit.gif">60帧</a></td>
+</tr>
+<tr>
+<td>barrel</td>
+<td>26.98</td>
+<td>27.90</td>
+<td>0.8592</td>
+<td>0.9797</td>
+<td>17.50</td>
+<td><a href="../results/624f8d104cee405092161fc7447c78f1/orbit.gif">60帧</a></td>
+</tr>
+<tr>
+<td>rock</td>
+<td>32.30</td>
+<td>29.10</td>
+<td>0.9388</td>
+<td>0.9868</td>
+<td>17.16</td>
+<td><a href="../results/3189bb396f8b4847afd3cb821dc4b919/orbit.gif">60帧</a></td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>22.51</td>
+<td>19.27</td>
+<td>0.8748</td>
+<td>0.8365</td>
+<td>45.88</td>
+<td><a href="../results/03af8be8df5946229b9bc30b6dcb2c54/orbit.gif">60帧</a></td>
+</tr>
+<tr>
+<td>boots</td>
+<td>27.01</td>
+<td>25.01</td>
+<td>0.9418</td>
+<td>0.9459</td>
+<td>30.87</td>
+<td><a href="../results/01e35903910841fdb2f3c4dc41ff8b74/orbit.gif">60帧</a></td>
+</tr>
+<tr>
+<td>radio</td>
+<td>26.75</td>
+<td>24.72</td>
+<td>0.9109</td>
+<td>0.9601</td>
+<td>25.89</td>
+<td><a href="../results/04c6b0d6e35446d2a42d4033f4e286c9/orbit.gif">60帧</a></td>
+</tr>
+<tr>
+<td>lion</td>
+<td>30.60</td>
+<td>24.70</td>
+<td>0.9532</td>
+<td>0.8351</td>
+<td>28.95</td>
+<td><a href="../results/c37d22acc31a41c5aa353f28a8494c1d/orbit.gif">60帧</a></td>
+</tr>
+<tr>
+<td>cart</td>
+<td>27.26</td>
+<td>22.50</td>
+<td>0.9292</td>
+<td>0.8658</td>
+<td>18.07</td>
+<td><a href="../results/034e31bc4b8a471699c3056b671b97b3/orbit.gif">60帧</a></td>
+</tr>
+<tr>
+<td>chest</td>
+<td>31.04</td>
+<td>28.42</td>
+<td>0.9372</td>
+<td>0.9832</td>
+<td>30.94</td>
+<td><a href="../results/0451dc8905f140639e0d081e78ea6b86/orbit.gif">60帧</a></td>
+</tr>
+<tr>
+<td>truck</td>
+<td>26.29</td>
+<td>21.06</td>
+<td>0.9345</td>
+<td>0.9545</td>
+<td>16.44</td>
+<td><a href="../results/0563c6e7a4ac4f02b6914f4f6e32b7fa/orbit.gif">60帧</a></td>
+</tr>
+</tbody>
+</table>
+<p>10对象宏平均：全图PSNR <strong>27.92 dB</strong>，前景PSNR <strong>24.83 dB</strong>，SSIM <strong>0.9204</strong>，mask IoU <strong>0.9325</strong>。累计仅优化循环约248.5秒；加载、图像生成、匹配、SfM、评价、GIF编码和导出时间另计。训练计时由程序同步GPU后记录，非整个流水线墙钟时间。</p>
+<p><img alt="重建评价" src="figures/reconstruction_metrics.png" /></p>
+<p><img alt="十对象NeRF渲染总览" src="overview.jpg" /></p>
+<p>完整60帧总览见 <a href="../results/overview.gif">overview.gif</a>，逐对象独立测试真值/预测/误差图见相应<code>comparison.png</code>。</p>
+<p>逐对象视觉检查仍可见实际缺陷：telephone的细线出现模糊和空中残影；cart细杆与轮辐细节不完整；boots暗色纹理较弱；lion模型自带较大的扫描底板，重建保留了底板，主体细节仍模糊。相机的小字和边缘也比输入软。展示图直接取真实NeRF帧，没有图像增强或用源网格替换预测。</p>
+<h3>5.1 点匹配结果</h3>
+<table>
+<thead>
+<tr>
+<th>对象</th>
+<th>SIFT总数</th>
+<th>RANSAC内点</th>
+<th>≥8内点图像对/288</th>
+<th>去重稀疏点</th>
+<th>双视图旋转误差中位数°</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>camera</td>
+<td>20586</td>
+<td>17448</td>
+<td>285</td>
+<td>6961</td>
+<td>4.28</td>
+</tr>
+<tr>
+<td>barrel</td>
+<td>15830</td>
+<td>10777</td>
+<td>286</td>
+<td>4117</td>
+<td>4.87</td>
+</tr>
+<tr>
+<td>rock</td>
+<td>44022</td>
+<td>40013</td>
+<td>288</td>
+<td>13172</td>
+<td>3.64</td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>5929</td>
+<td>3059</td>
+<td>196</td>
+<td>1462</td>
+<td>22.93</td>
+</tr>
+<tr>
+<td>boots</td>
+<td>4259</td>
+<td>2828</td>
+<td>213</td>
+<td>1454</td>
+<td>25.89</td>
+</tr>
+<tr>
+<td>radio</td>
+<td>18449</td>
+<td>13574</td>
+<td>277</td>
+<td>6793</td>
+<td>3.95</td>
+</tr>
+<tr>
+<td>lion</td>
+<td>15407</td>
+<td>13416</td>
+<td>258</td>
+<td>6216</td>
+<td>9.53</td>
+</tr>
+<tr>
+<td>cart</td>
+<td>14527</td>
+<td>6520</td>
+<td>248</td>
+<td>3853</td>
+<td>23.12</td>
+</tr>
+<tr>
+<td>chest</td>
+<td>10637</td>
+<td>5972</td>
+<td>281</td>
+<td>3301</td>
+<td>29.02</td>
+</tr>
+<tr>
+<td>truck</td>
+<td>9050</td>
+<td>5520</td>
+<td>263</td>
+<td>3208</td>
+<td>25.79</td>
+</tr>
+</tbody>
+</table>
+<p>纹理丰富的扫描岩石和相机能提供较多稳定匹配；靴子、电话等暗色/局部低纹理物体，以及箱子/卡车的对称或重复结构，双视图姿态更不稳定。以上是本组样本内的关联与案例解释，尚未将材质、形状、投影面积分别控制，不能仅凭匹配数断言因果。已知相机基线中，匹配误差不会自动传入NeRF；下面的相机扰动和SfM分支才检验外参误差的影响。</p>
+<p><img alt="四对象点匹配实例" src="figures/matching_examples.jpg" /></p>
+<p>图中展示各对象保存的首个高内点图像对，仅作位置对应示例；统计结论基于全部288对，而非仅图示对。全部10对象的匹配图片、关键点/描述子及内点索引都在提交仓库中。</p>
+<h3>5.2 COLMAP相机恢复</h3>
+<table>
+<thead>
+<tr>
+<th>对象</th>
+<th>状态</th>
+<th>最大模型注册/72</th>
+<th>稀疏点</th>
+<th>重投影px</th>
+<th>对齐中心RMSE</th>
+<th>对齐角度均误差°</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>camera</td>
+<td>complete</td>
+<td>72</td>
+<td>2531</td>
+<td>0.74</td>
+<td>0.0163</td>
+<td>0.32</td>
+</tr>
+<tr>
+<td>barrel</td>
+<td>complete</td>
+<td>72</td>
+<td>3079</td>
+<td>0.74</td>
+<td>2.6530</td>
+<td>83.80</td>
+</tr>
+<tr>
+<td>rock</td>
+<td>complete</td>
+<td>72</td>
+<td>4743</td>
+<td>0.66</td>
+<td>0.0136</td>
+<td>0.27</td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>partial</td>
+<td>66</td>
+<td>1398</td>
+<td>0.99</td>
+<td>0.1150</td>
+<td>1.86</td>
+</tr>
+<tr>
+<td>boots</td>
+<td>partial</td>
+<td>9</td>
+<td>108</td>
+<td>0.92</td>
+<td>0.1258</td>
+<td>4.38</td>
+</tr>
+<tr>
+<td>radio</td>
+<td>complete</td>
+<td>72</td>
+<td>2142</td>
+<td>0.79</td>
+<td>0.0213</td>
+<td>0.47</td>
+</tr>
+<tr>
+<td>lion</td>
+<td>partial</td>
+<td>67</td>
+<td>1584</td>
+<td>0.75</td>
+<td>0.0680</td>
+<td>0.86</td>
+</tr>
+<tr>
+<td>cart</td>
+<td>partial</td>
+<td>68</td>
+<td>2063</td>
+<td>0.87</td>
+<td>2.2284</td>
+<td>24.68</td>
+</tr>
+<tr>
+<td>chest</td>
+<td>partial</td>
+<td>54</td>
+<td>989</td>
+<td>0.82</td>
+<td>0.0527</td>
+<td>1.07</td>
+</tr>
+<tr>
+<td>truck</td>
+<td>partial</td>
+<td>61</td>
+<td>954</td>
+<td>0.74</td>
+<td>0.0469</td>
+<td>0.87</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="SfM最大模型覆盖率" src="figures/sfm_coverage.png" /></p>
+<p>较小的重投影误差也可能对应错误的重复结构或不完整连通模型，必须结合注册率和对齐外参误差。失败或partial结果保存在对应<code>sfm/metrics.json</code>，没有回填真实相机来虚报成功。COLMAP数据库包含完整提取、匹配与几何验证结果，另外保留原始稀疏模型和估计相机。</p>
+<p>本轮的具体反例是barrel：72/72张全部注册、重投影仅0.739px，但对齐方向均误差83.80°、中心RMSE2.653。cart同样仅0.868px重投影，却有24.68°方向误差。相机对象的重投影为0.738px，方向均误差仅0.319°。桶板/轮辐/木条的重复结构与轨迹折叠现象一致，但这仍是结合形状的解释，不是逐匹配因果证明。Sim(3)计算和相机变换已用COLMAP原生API独立核对，差异小于7e-15，排除了本次对齐实现错误。</p>
+<h2>6. 受控消融与影响分析</h2>
+<p>选取camera、cart、telephone三个对象，在相同seed、3000步、4096光线和128采样下，分别改变训练视角、相机旋转噪声、最终网格分辨率或轮廓初始化；其余参数继承各自基线。测试图和测试相机始终相同。每个对照只改一个约定因素；grid32同时取消了由粗到细的细化过程，因此代表整体网格容量/细化策略的变化。</p>
+<table>
+<thead>
+<tr>
+<th>对象</th>
+<th>变体</th>
+<th>视图</th>
+<th>网格</th>
+<th>PSNR</th>
+<th>ΔPSNR</th>
+<th>前景PSNR</th>
+<th>Δ前景</th>
+<th>SSIM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>camera</td>
+<td>baseline</td>
+<td>72</td>
+<td>96</td>
+<td>28.47</td>
+<td>0.00</td>
+<td>25.66</td>
+<td>0.00</td>
+<td>0.9242</td>
+</tr>
+<tr>
+<td>camera</td>
+<td>views12</td>
+<td>12</td>
+<td>96</td>
+<td>23.37</td>
+<td>-5.10</td>
+<td>19.51</td>
+<td>-6.15</td>
+<td>0.8064</td>
+</tr>
+<tr>
+<td>camera</td>
+<td>pose_noise2deg</td>
+<td>72</td>
+<td>96</td>
+<td>17.24</td>
+<td>-11.23</td>
+<td>15.20</td>
+<td>-10.46</td>
+<td>0.6555</td>
+</tr>
+<tr>
+<td>camera</td>
+<td>grid32</td>
+<td>72</td>
+<td>32</td>
+<td>27.11</td>
+<td>-1.36</td>
+<td>24.17</td>
+<td>-1.48</td>
+<td>0.8963</td>
+</tr>
+<tr>
+<td>camera</td>
+<td>no_hull_prior</td>
+<td>72</td>
+<td>96</td>
+<td>28.50</td>
+<td>0.03</td>
+<td>25.40</td>
+<td>-0.26</td>
+<td>0.9203</td>
+</tr>
+<tr>
+<td>cart</td>
+<td>baseline</td>
+<td>72</td>
+<td>96</td>
+<td>27.26</td>
+<td>0.00</td>
+<td>22.50</td>
+<td>0.00</td>
+<td>0.9292</td>
+</tr>
+<tr>
+<td>cart</td>
+<td>views12</td>
+<td>12</td>
+<td>96</td>
+<td>24.05</td>
+<td>-3.22</td>
+<td>18.03</td>
+<td>-4.47</td>
+<td>0.8573</td>
+</tr>
+<tr>
+<td>cart</td>
+<td>pose_noise2deg</td>
+<td>72</td>
+<td>96</td>
+<td>19.33</td>
+<td>-7.93</td>
+<td>16.87</td>
+<td>-5.64</td>
+<td>0.7425</td>
+</tr>
+<tr>
+<td>cart</td>
+<td>grid32</td>
+<td>72</td>
+<td>32</td>
+<td>25.71</td>
+<td>-1.55</td>
+<td>21.79</td>
+<td>-0.71</td>
+<td>0.9014</td>
+</tr>
+<tr>
+<td>cart</td>
+<td>no_hull_prior</td>
+<td>72</td>
+<td>96</td>
+<td>27.05</td>
+<td>-0.21</td>
+<td>22.56</td>
+<td>0.05</td>
+<td>0.9314</td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>baseline</td>
+<td>72</td>
+<td>96</td>
+<td>22.51</td>
+<td>0.00</td>
+<td>19.27</td>
+<td>0.00</td>
+<td>0.8748</td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>views12</td>
+<td>12</td>
+<td>96</td>
+<td>19.78</td>
+<td>-2.73</td>
+<td>14.37</td>
+<td>-4.90</td>
+<td>0.7437</td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>pose_noise2deg</td>
+<td>72</td>
+<td>96</td>
+<td>15.68</td>
+<td>-6.83</td>
+<td>14.79</td>
+<td>-4.49</td>
+<td>0.6765</td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>grid32</td>
+<td>72</td>
+<td>32</td>
+<td>21.48</td>
+<td>-1.04</td>
+<td>18.90</td>
+<td>-0.37</td>
+<td>0.8596</td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>no_hull_prior</td>
+<td>72</td>
+<td>96</td>
+<td>23.49</td>
+<td>0.98</td>
+<td>19.87</td>
+<td>0.60</td>
+<td>0.8862</td>
+</tr>
+</tbody>
+</table>
+<p>实际对照的对象等权平均变化（变体减同对象基线）：views12（3对象）全图-3.68 dB、前景-5.17 dB；pose_noise2deg（3对象）全图-8.66 dB、前景-6.86 dB；grid32（3对象）全图-1.32 dB、前景-0.86 dB；no_hull_prior（3对象）全图+0.26 dB、前景+0.13 dB。负值表示该设定下质量下降；正值保留原值，不强行假定每种先验都必然改善每个对象。</p>
+<p><img alt="受控消融结果" src="figures/ablations.png" /></p>
+<p>在这三个对象和固定预算下，相机扰动带来的平均前景下降最大，其次是减少视图；32³网格的下降较小。移除轮廓初始化的前景均值反而略有上升，而IoU均值有所下降，说明该初始化并非对所有指标都占优，仍需结合细杆和空洞的可视化判断。此结论限制在当前单seed、对象和超参数范围。</p>
+<p>消融的规范数值及相对基线差值完整保存在 <a href="../experiments/ablation_summary.csv">ablation_summary.csv</a>。<code>views12</code>沿原72视图序列均匀取12张；<code>pose_noise2deg</code>为每个训练相机叠加随机轴旋转，角度为2°×标准正态变量，位置不变，初始化也使用扰动后相机；<code>no_hull_prior</code>仅改为通用球密度初始化，仍保留alpha损失、前景采样和RGB投影初始化。它不是完全去除alpha信息的对照。</p>
+<h3>6.1 真实估计相机进入NeRF的对照</h3>
+<p>此分支将COLMAP实际恢复并经单个全局Sim(3)对齐的相机用于训练，不逐相机修正；输入仍为相同原RGBA，测试使用原独立相机。全局对齐用已知轨迹确定尺度/坐标规范，所以这是受控外参误差实验，不宣称完全无真值的真实世界评测。注册视图不足会同时减少训练覆盖，因此需将两种影响一起解释。</p>
+<table>
+<thead>
+<tr>
+<th>对象</th>
+<th>状态</th>
+<th>注册/72</th>
+<th>PSNR</th>
+<th>ΔPSNR</th>
+<th>前景PSNR</th>
+<th>Δ前景</th>
+<th>SSIM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>camera</td>
+<td>complete</td>
+<td>72</td>
+<td>27.45</td>
+<td>-1.02</td>
+<td>24.84</td>
+<td>-0.82</td>
+<td>0.9168</td>
+</tr>
+<tr>
+<td>rock</td>
+<td>complete</td>
+<td>72</td>
+<td>31.65</td>
+<td>-0.65</td>
+<td>28.73</td>
+<td>-0.37</td>
+<td>0.9350</td>
+</tr>
+<tr>
+<td>telephone</td>
+<td>complete</td>
+<td>66</td>
+<td>20.13</td>
+<td>-2.39</td>
+<td>16.29</td>
+<td>-2.98</td>
+<td>0.8270</td>
+</tr>
+</tbody>
+</table>
+<p>camera使用72/72张恢复外参，前景PSNR由25.66变为24.84 dB（-0.82 dB）。这反映当前SfM估计与视图覆盖共同作用，不是仅凭重投影误差预测的结果。</p>
+<p>rock使用72/72张恢复外参，前景PSNR由29.10变为28.73 dB（-0.37 dB）。这反映当前SfM估计与视图覆盖共同作用，不是仅凭重投影误差预测的结果。</p>
+<p>telephone使用66/72张恢复外参，前景PSNR由19.27变为16.29 dB（-2.98 dB）。这反映当前SfM估计与视图覆盖共同作用，不是仅凭重投影误差预测的结果。</p>
+<h3>6.2 哪些环节影响最终结果</h3>
+<ol>
+<li>
+<p>数据完整性与材质读取：缺失纹理、遗漏场景实例、错误坐标或尺寸会改变实际监督；清洗证据、场景图、哈希和预览应先于训练检查。本轮实际发现并修复chest图像裁切，说明统一最大边长后仍要检查相机取景；没有把未发生的纹理损坏写成实测故障。</p>
+</li>
+<li>
+<p>图像与视角覆盖：低仰角细杆、底部和凹陷可能缺乏可见证据；更多视角能够提供额外遮挡约束。12视图对照测量数量/覆盖减少的联合影响；相同优化步数不等于相同每图被采样次数。</p>
+</li>
+<li>
+<p>匹配和位姿：低纹理、对称、过小基线使匹配或姿态不稳；错误相机会让同一表面跨视图对不齐，形成重影和模糊。RANSAC、视差过滤和束调整各有作用，基线使用已知外参将此项隔离。</p>
+</li>
+<li>
+<p>表示容量与采样：小网格限制细节，固定光线采样可能漏过细线；提高容量也会增加内存和训练开销。grid32对照检验容量/细化策略，其他采样数未消融，不能据此给出其最优值。</p>
+</li>
+<li>
+<p>初始化、mask与优化：轮廓先验帮助排除空空间，前景重要性采样避免白背景主导；但精确alpha来自合成数据。真实照片需要分割，并承担mask误差。去hull实验保留其他mask用途，结论应严格限制在初始化作用。</p>
+</li>
+<li>
+<p>评价与展示：全图PSNR受白背景影响，应并列前景PSNR与轮廓IoU；GIF只是新视角可视化，不能代替独立测试。固定光照的合成图像无法验证真实光照变化、反光、透明或动态物体的鲁棒性。</p>
+</li>
+</ol>
+<p>全部对照使用单次seed，不能估计多种随机种子的方差；样本只有10个、消融只有3个对象，因此不声称得到普适排序。</p>
+<h2>7. 复现与交付结构</h2>
+<p>环境：Python 3.10.20；PyTorch 2.1.2；CUDA12.1轮子；NVIDIA H100 MIG 3g.40gb。CPU软件光栅化和CPU COLMAP，GPU用于NeRF优化/体渲染。完整实际版本见 <a href="../manifests/environment.json">environment.json</a>。</p>
+<pre><code class="language-bash"># 从assignment2仓库根目录运行
+.venv/bin/python run_pipeline.py
+.venv/bin/python run_pipeline.py --stages sfm ablation
+.venv/bin/python src/train_sfm_branch.py --device cuda
+.venv/bin/python src/build_gallery.py
+.venv/bin/python src/build_report.py
+.venv/bin/python src/validate_submission.py
+</code></pre>
+<p>入口代码按阶段调用，日志记录实际命令、返回码和墙钟时间。<code>results/&lt;UID&gt;/matching</code>保存所有特征与匹配数组、CSV、四张匹配图、稀疏点；<code>sfm</code>保存估计相机、数据库和模型；对象根目录保存checkpoint、训练曲线数据、测试指标/图片、60帧GIF和学习密度PLY。<code>experiments</code>保留消融与真实估计相机对照，<code>configs/team.json</code>管理五人分工。</p>
+<p>GitHub版本将每个对象的完整点匹配目录无损归档为 <code>results/&lt;UID&gt;/matching/complete_matching.zip</code>，同时保留可直接浏览的匹配图、逐对CSV和汇总。归档包含全部72份关键点/描述子和288份图像对匹配，没有删减数组；<code>python src/restore_matching.py</code> 可恢复原目录。<code>python src/verify_repository.py</code> 可在不使用CUDA、无需原始GLB的条件下检查成员、仓库链接、10个GIF和全部匹配归档。可重新生成的训练检查点、逐帧PNG和COLMAP数据库保留在完整本地提交包中，不作为GitHub必需文件。</p>
+<p>交付核验检查10个唯一UID及源文件哈希、清洗kept证据、输入完整性和留白、train/test/orbit相机不重复、720个特征文件和2880个匹配文件的原始计数、检查点、测试指标、60帧GIF可解码且帧间不同，以及学习密度导出。核验结果见 <a href="../manifests/validation.json">validation.json</a>。成员与分工记录见 <a href="../configs/team.json">team.json</a>。</p>
+<p>仓库还保存 <code>manifests/assignment1_evidence/</code> 的10对象第一作业审计子集与来源/子集校验和。原始审计齐全时优先核对原件；在新机器只下载10个源模型时，可以核验归档kept证据及源SHA，无需下载整片或重复复制相同GLB。归档不是重新执行清洗。</p>
+<h2>8. 参考资料</h2>
+<ul>
+<li>
+<p><a href="https://www.matthewtancik.com/nerf">NeRF原论文项目页</a>：图像与已知相机监督、连续辐射场和可微体渲染。</p>
+</li>
+<li>
+<p><a href="https://sunset1995.github.io/dvgo/">Direct Voxel Grid Optimization项目页</a>：密度网格、特征网格、浅层网络与插值后激活。</p>
+</li>
+<li>
+<p><a href="https://colmap.github.io/tutorial.html">COLMAP官方教程</a>：特征提取、匹配、几何验证与增量重建。</p>
+</li>
+<li>
+<p><a href="https://docs.opencv.org/4.x/da/df5/tutorial_py_sift_intro.html">OpenCV官方SIFT教程</a>：SIFT与描述子比例检验。</p>
+</li>
+</ul></body></html>

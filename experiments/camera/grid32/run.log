@@ -1,0 +1,33 @@
+/data/260010041/class_homework/3dv/assignment2/.venv/bin/python /data/260010041/class_homework/3dv/assignment2/src/nerf.py --data /data/260010041/class_homework/3dv/assignment2/data/03b0ac7d99c44197a09640179f360f3c --output /data/260010041/class_homework/3dv/assignment2/experiments/camera/grid32 --device cuda --skip-orbit --steps 3000 --resolution 32 --rays 4096 --samples 128 --image-size 256 --render-size 256 --chunk 4096 --seed 42 --alpha-weight 0.1 --tv-weight 1e-05 --bound 1.0 --pose-noise-deg 0.0
+step=    1/3000 res=32 loss=0.16687 psnr=8.35 alpha=0.20670 seconds=0.5
+step=  101/3000 res=32 loss=0.01325 psnr=19.43 alpha=0.01856 seconds=1.6
+step=  201/3000 res=32 loss=0.01017 psnr=20.62 alpha=0.01399 seconds=3.0
+step=  301/3000 res=32 loss=0.00832 psnr=21.46 alpha=0.01182 seconds=6.4
+step=  401/3000 res=32 loss=0.00744 psnr=21.96 alpha=0.00943 seconds=8.3
+step=  501/3000 res=32 loss=0.00691 psnr=22.20 alpha=0.00884 seconds=9.5
+step=  601/3000 res=32 loss=0.00630 psnr=22.70 alpha=0.00786 seconds=12.8
+step=  701/3000 res=32 loss=0.00566 psnr=23.08 alpha=0.00735 seconds=16.6
+step=  801/3000 res=32 loss=0.00558 psnr=23.25 alpha=0.00699 seconds=19.8
+step=  901/3000 res=32 loss=0.00484 psnr=23.76 alpha=0.00624 seconds=21.8
+step= 1001/3000 res=32 loss=0.00522 psnr=23.54 alpha=0.00640 seconds=25.2
+step= 1101/3000 res=32 loss=0.00494 psnr=23.66 alpha=0.00632 seconds=26.9
+step= 1201/3000 res=32 loss=0.00482 psnr=23.87 alpha=0.00560 seconds=29.9
+step= 1301/3000 res=32 loss=0.00416 psnr=24.40 alpha=0.00524 seconds=31.7
+step= 1401/3000 res=32 loss=0.00482 psnr=23.95 alpha=0.00622 seconds=35.3
+step= 1501/3000 res=32 loss=0.00453 psnr=24.02 alpha=0.00566 seconds=36.6
+step= 1601/3000 res=32 loss=0.00429 psnr=24.46 alpha=0.00548 seconds=37.6
+step= 1701/3000 res=32 loss=0.00410 psnr=24.41 alpha=0.00478 seconds=38.7
+step= 1801/3000 res=32 loss=0.00453 psnr=24.20 alpha=0.00555 seconds=39.7
+step= 1901/3000 res=32 loss=0.00403 psnr=24.43 alpha=0.00427 seconds=40.8
+step= 2001/3000 res=32 loss=0.00385 psnr=24.91 alpha=0.00450 seconds=41.8
+step= 2101/3000 res=32 loss=0.00451 psnr=24.20 alpha=0.00710 seconds=42.9
+step= 2201/3000 res=32 loss=0.00422 psnr=24.54 alpha=0.00534 seconds=43.9
+step= 2301/3000 res=32 loss=0.00359 psnr=25.08 alpha=0.00485 seconds=45.0
+step= 2401/3000 res=32 loss=0.00394 psnr=24.78 alpha=0.00439 seconds=46.0
+step= 2501/3000 res=32 loss=0.00390 psnr=24.67 alpha=0.00482 seconds=47.1
+step= 2601/3000 res=32 loss=0.00422 psnr=24.56 alpha=0.00540 seconds=48.2
+step= 2701/3000 res=32 loss=0.00343 psnr=25.24 alpha=0.00437 seconds=49.3
+step= 2801/3000 res=32 loss=0.00382 psnr=24.96 alpha=0.00449 seconds=50.4
+step= 2901/3000 res=32 loss=0.00350 psnr=25.15 alpha=0.00447 seconds=51.5
+step= 3000/3000 res=32 loss=0.00391 psnr=24.66 alpha=0.00482 seconds=52.6
+Held-out PSNR=27.108, foreground PSNR=24.175, SSIM=0.8963

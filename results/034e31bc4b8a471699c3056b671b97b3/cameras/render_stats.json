@@ -1,0 +1,69 @@
+{
+  "vertices": 5663,
+  "triangles": 2780,
+  "instances": 1,
+  "materials": 1,
+  "textured_materials": 1,
+  "normalization_matrix": [
+    [
+      0.3829556896046799,
+      0.0,
+      0.0,
+      0.32656658405959765
+    ],
+    [
+      0.0,
+      0.0,
+      -0.3829556896046799,
+      -0.0008617311743598597
+    ],
+    [
+      0.0,
+      0.3829556896046799,
+      0.0,
+      -0.29434644970052615
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "original_rotated_bounds": [
+    [
+      -2.941767454147339,
+      -1.1095744467012685,
+      0.00023068636947931598
+    ],
+    [
+      1.2362616062164307,
+      1.1140748690621396,
+      1.5370043394601465
+    ]
+  ],
+  "normalization_max_extent": 1.6,
+  "alpha_cutoff": 0.35,
+  "renderer": "CPU perspective-correct textured triangle z-buffer; fixed two-sided world diffuse lighting",
+  "seconds": 2.247276782989502,
+  "image_size": 384,
+  "fov_degrees": 40.0,
+  "camera_radius": 3.0,
+  "splits": [
+    {
+      "split": "train",
+      "views": 72,
+      "images_rendered": true
+    },
+    {
+      "split": "test",
+      "views": 12,
+      "images_rendered": true
+    },
+    {
+      "split": "orbit",
+      "views": 60,
+      "images_rendered": false
+    }
+  ]
+}

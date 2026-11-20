@@ -1,0 +1,58 @@
+{
+  "resolution": 96,
+  "feature_dim": 8,
+  "bound": 1.0,
+  "training_seconds": 45.882484098896384,
+  "train_views": 72,
+  "training_width": 256,
+  "training_height": 256,
+  "steps": 3000,
+  "initialization": {
+    "initialization": "soft_visual_hull_from_training_alpha",
+    "initial_voxels": 866,
+    "initialization_views": 24
+  },
+  "config": {
+    "data": "/data/260010041/class_homework/3dv/assignment2/data/03af8be8df5946229b9bc30b6dcb2c54",
+    "output": "/data/260010041/class_homework/3dv/assignment2/results/03af8be8df5946229b9bc30b6dcb2c54",
+    "device": "cuda",
+    "steps": 3000,
+    "resolution": 96,
+    "rays": 4096,
+    "samples": 128,
+    "image_size": 256,
+    "render_size": 256,
+    "orbit_frames": 60,
+    "chunk": 4096,
+    "train_views": null,
+    "pose_noise_deg": 0.0,
+    "no_alpha_loss": false,
+    "alpha_weight": 0.1,
+    "tv_weight": 1e-05,
+    "bound": 1.0,
+    "seed": 42,
+    "render_only": false,
+    "checkpoint": null,
+    "skip_orbit": false
+  },
+  "method": "voxel-feature NeRF with differentiable alpha compositing",
+  "training_inputs": [
+    "RGB PNG",
+    "alpha PNG",
+    "calibrated camera poses and intrinsics"
+  ],
+  "resolution_schedule": [
+    {
+      "step": 0,
+      "resolution": 32
+    },
+    {
+      "step": 1050,
+      "resolution": 64
+    },
+    {
+      "step": 1950,
+      "resolution": 96
+    }
+  ]
+}
