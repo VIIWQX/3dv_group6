@@ -1,0 +1,18 @@
+Create ONE polished full-slide 16:9 widescreen PowerPoint image for a Chinese university 3D vision presentation. Output a complete finished slide, target 1920x1080, landscape 16:9, no outside border. Style: clean hand-drawn technical explainer. Near-white paper #FCFBF7 (not yellow), delicate irregular graphite #2F3437 outlines, very subtle pencil hatching, sparse pale blue #BFD7F1 and sage #CFE2D1 marker emphasis, tiny peach #F4C7B8 highlights. Calm and airy, sophisticated educational sketchbook, not a messy whiteboard. Large restrained handwritten Chinese title; crisp readable Chinese labels, plenty of whitespace. No giant cartoon, no watermark, no logo, no page/slide number.
+
+Input image 1 is a STRICT SCIENTIFIC INPUT ASSET: the actual four-condition ablation chart. Place the original chart visibly in a large main panel on the left occupying about 64% width. Preserve its data, bar heights, colors, English axes, tick labels, legend, relative bar positions and all plotted content exactly. Do NOT redraw, reimagine, regenerate, simplify or replace this chart. Keep a clean white rectangular panel under the chart; the hand-drawn styling belongs to the surrounding slide only. Do not crop any chart labels. It is a study from three objects, not ten.
+
+Composition: top-left short headline with a fine blue marker underline; small subtitle below. Original ablation chart in large left panel. On the right, four sparse handwritten annotations with generous vertical spacing and small sketched brackets (not digital UI cards). A tiny hand-drawn camera+misaligned rays icon may accompany the first annotation, but do not cover the chart. Bottom a single quiet limitation line.
+
+All visible new text MUST be exactly as follows, correctly rendered in simplified Chinese:
+Title: "相机误差，比你想的更关键"
+Subtitle: "12 组受控实验｜3 个对象"
+Right annotation heading: "前景 PSNR 平均变化"
+Right entries, with exact signs:
+"相机扰动  −6.86 dB"
+"视图减少  −5.17 dB"
+"网格变小  −0.86 dB"
+"去掉轮廓初始化  +0.13 dB"
+Bottom note: "仅比较当前对象与固定训练预算；单次随机种子。"
+
+Do not add other explanatory text. Use the strongest pastel emphasis on −6.86 dB and −5.17 dB; make the +0.13 dB entry quiet sage, reflecting a small gain. This slide is an accurate scientific result, not invented data. Keep all text, graph and doodles comfortably inside safe margins.

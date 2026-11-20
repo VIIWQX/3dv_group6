@@ -27,6 +27,9 @@ def main():
     assert all(name in report and sid in report for sid,name in expected.items())
     for relative in ['README.md','requirements.txt','run_pipeline.py','docs/PROMPTS.md','docs/pipeline_report.docx','docs/pipeline_report.html','src/nerf.py','src/render_dataset.py','src/match_features.py','src/run_sfm.py']:
         assert (root/relative).is_file(),relative
+    prompt_folder=root/'docs/prompt_records/presentation'
+    assert len(list(prompt_folder.glob('slide_*.json')))==14
+    assert (prompt_folder/'sample_prompt.txt').is_file() and (prompt_folder/'style.md').is_file()
     inventory=json.loads((root/'manifests/repository_inventory.json').read_text())
     assert len(inventory['objects'])==len({o['uid'] for o in inventory['objects']})==10
     details=[]

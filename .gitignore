@@ -9,7 +9,7 @@ experiments/camera_smoke/
 experiments/rejected/
 experiments/**/checkpoint.pt
 previews/
-presentation/
+/presentation/
 logs/
 *.zip
 !results/*/matching/complete_matching.zip
